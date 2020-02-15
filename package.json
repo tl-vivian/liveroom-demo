@@ -1,0 +1,19 @@
+{
+  "name": "liveroom-demo",
+  "version": "0.0.1",
+  "description": "This is a demo that shows what and how interactions appear in the liveroom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tl-vivian/liveroom-demo.git"
+  },
+  "author": "Vivian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tl-vivian/liveroom-demo/issues"
+  },
+  "homepage": "https://github.com/tl-vivian/liveroom-demo#readme"
+}
