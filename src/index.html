@@ -1,19 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Liveroom Demo</title>
-</head>
-<body>
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
     <main>
-        <div class="phone">
-            <div class="streaming"></div>
-            <div class="mockup"></div>
+      <div class="phone">
+        <div class="app">
+          <div class="streaming">
+            <!-- <video autoplay muted loop>
+              <source src="./video1.mp4" type="video/mp4" />
+            </video> -->
+          </div>
+          <div class="shades">
+            <div class="top-shade"></div>
+            <div class="bottom-shade"></div>
+          </div>
+          <div class="ui">
+            <div class="top-ui">
+              <div class="host-info">
+                <div class="avatar40"></div>
+                <div class="host-status">
+                  <p class="host-nickname t-caption">Host Nickname</p>
+                  <span class="host-live-data t-caption">
+                    <i data-feather="activity"></i> 123456</span
+                  >
+                </div>
+              </div>
+              <button class="icon-button exit-button">
+                <i data-feather="x"></i>
+              </button>
+            </div>
+            <div class="clear-zone"></div>
+            <div class="chatroom">
+              <div class="msg">
+                <div class="msg-lv-badge t-level-badge-number">
+                  <i data-feather="hexagon"></i>
+                  <p class="lv-number">99</p>
+                </div>
+                <p class="msg-nickname t-title2">Nickname:</p>
+                <p class="msg-content t-body2">
+                  12345678912345697/
+                </p>
+              </div>
+            </div>
+            <div class="bottom-ui">
+              <input type="text" class="chat-input" placeholder="來聊天吧" />
+              <button class="icon-button">
+                <i data-feather="share-2"></i>
+              </button>
+              <button class="icon-button"><i data-feather="crop"></i></button>
+              <button class="icon-button"><i data-feather="gift"></i></button>
+            </div>
+          </div>
         </div>
-        <div class="phone-variation"></div>
+        <div class="mockup"></div>
+      </div>
+      <div class="phone-variation"></div>
     </main>
     <aside></aside>
-</body>
+    <script>
+      feather.replace();
+    </script>
+  </body>
 </html>
