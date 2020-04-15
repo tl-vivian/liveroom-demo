@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500&display=swap");
+
+/* ---- CSS Reset ---- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---- styles from zeplin ---- */
+:root {
+  --primary: #eb5490;
+  --primary10: rgba(235, 84, 144, 0.1);
+  --primary25: rgba(235, 84, 144, 0.25);
+  --primary50: rgba(235, 84, 144, 0.5);
+  --secondary2: #ffc02d;
+  --secondary1: #4fccf5;
+  --secondary5: #ffa25a;
+  --secondary3: #92dcd0;
+  --secondary4: #926ac7;
+  --black: #222222;
+  --black25: rgba(34, 34, 34, 0.25);
+  --black50: rgba(34, 34, 34, 0.5);
+  --black75: rgba(34, 34, 34, 0.75);
+  --grey1: #444444;
+  --grey2: #888888;
+  --lightGrey1: #ebebeb;
+  --lightGrey2: #f6f6f6;
+  --white: #ffffff;
+  --white90: rgba(255, 255, 255, 0.9);
+  --white75: rgba(255, 255, 255, 0.75);
+  --white50: rgba(255, 255, 255, 0.5);
+}
+
+.t-headline {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.t-title1 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.t-body1 {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.t-title2 {
+  font-family: NotoSansCJKtc;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+}
+
+.t-body2 {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.43;
+}
+
+.t-caption {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.33;
+}
+
+.t-level-badge-number {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 300;
+  color: var(--white);
+}
+
+.t-smallcaption {
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* --------------------------- */
+
+body {
+  height: 100vh;
+  display: flex;
+  font-family: "Noto Sans TC";
+}
+
+main {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(255, 169, 169);
+}
+
+aside {
+  flex: 1;
+  height: 100%;
+  background-color: rgb(199, 212, 231);
+}
+
+.phone {
+  height: 667px;
+  width: 375px;
+  position: relative;
+}
+.mockup {
+  height: 100%;
+  width: 100%;
+  border: white 1px solid;
+  z-index: 10;
+}
+.streaming {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(68, 66, 66);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
