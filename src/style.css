@@ -32,9 +32,11 @@ button:focus {
   --secondary5: #ffa25a;
   --secondary3: #92dcd0;
   --secondary4: #926ac7;
+  --ivory:rgba(255,236,214,1);
   --black: #222222;
   --black75: rgba(34, 34, 34, 0.75);
   --black50: rgba(34, 34, 34, 0.5);
+  --black40: rgba(34, 34, 34, 0.4);
   --black25: rgba(34, 34, 34, 0.25);
   --black10: rgba(34, 34, 34, 0.1);
   --black0: rgba(34, 34, 34, 0);
@@ -202,25 +204,7 @@ aside {
   /* background-color: rgb(172, 102, 102); */
   flex: 1;
 }
-.chatroom {
-  width: 100%;
-  height: 20%;
-  /* border: 1px solid #fff; */
-  position: relative;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 30% 100%
-  );
-}
-.msgs {
-  height: 100%;
-  width: 100%;
-  overflow: scroll;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-start;
-}
+
 /* .fade-shade {
   position: absolute;
   background: linear-gradient(rgba(0, 0, 0, 100), rgba(0, 0, 0, 0));
@@ -308,17 +292,40 @@ input.chat-input {
   background-color: var(--white25);
   border: 1px solid var(--white50);
 }
-
+.chatroom {
+  width: calc(100% - 112px);
+  height: 20%;
+  /* border: 1px solid #fff; */
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 30% 100%
+  );
+}
+.msgs {
+  height: 100%;
+  max-width: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}
 .msg {
-  background-color: var(--black10);
+  background-color: var(--black40);
   border-radius: 4px;
   color: var(--white);
-  margin: 4px 0;
+  text-shadow: 0 0 2px var(--black50);
+  margin: 2px 0;
   padding: 2px 4px;
+  word-break: break-all;
 }
 .msg > * {
   margin: 2px;
   vertical-align: middle;
+}
+.msg-nickname{
+  color: var(--ivory);
 }
 .msg-lv-badge {
   display: inline-block;
