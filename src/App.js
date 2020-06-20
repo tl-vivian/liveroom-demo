@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as Icon from "react-feather";
+import ChatMsg from "./ChatMsg";
 
 const App = () => {
   return (
@@ -32,57 +33,8 @@ const App = () => {
               <div class="chatroom">
                 <div class="fade-shade"></div>
                 <div class="msgs">
-                  <span class="msg t-body2">
-                    <span class="msg-lv-badge t-level-badge-number">
-                      <Icon.Hexagon size={12} />
-                      99
-                    </span>
-                    <span class="msg-lv-badge t-level-badge-number">
-                      <Icon.Hexagon size={12} />
-                    </span>
-                    <span class="t-title2 msg-nickname">Nickname:</span>
-                    <span>
-                      first msg 12345678912345697/1234
-                      5678912345697/12345678912345697/12345678 912345697 /12 34
-                      56789 12345697 /1234567891
-                    </span>
-                  </span>
-                  <span class="msg t-body2">
-                    <span class="msg-lv-badge t-level-badge-number">
-                      <Icon.Hexagon size={12} />
-                      123
-                    </span>
-                    <span class="msg-lv-badge t-level-badge-number">
-                      <Icon.Hexagon size={12} />
-                      99
-                    </span>
-                    <span class="t-title2">Nickname:</span>
-                    <span>2 msg 1234567891</span>
-                  </span>
-                  <span class="msg t-body2">
-                    <span class="msg-lv-badge t-level-badge-number">
-                      <Icon.Hexagon size={12} />
-                      99
-                    </span>
-                    <span class="msg-lv-badge t-level-badge-number">
-                      <Icon.Hexagon size={12} />
-                      99
-                    </span>
-                    <span class="t-title2">Nickname:</span>
-                    <span>3 msg1234567891</span>
-                  </span>
-                  <span class="msg t-body2">
-                    <span class="msg-lv-badge t-level-badge-number">
-                      <Icon.Hexagon size={12} />
-                      99
-                    </span>
-                    <span class="msg-lv-badge t-level-badge-number">
-                      <Icon.Hexagon size={12} />
-                      99
-                    </span>
-                    <span class="t-title2">Nickname:</span>
-                    <span>4 msg 1234567891</span>
-                  </span>
+                  <ChatMsg />
+                  <ChatMsg />
                 </div>
               </div>
               <div class="bottom-ui">
