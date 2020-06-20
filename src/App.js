@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as Icon from "react-feather";
 import ChatMsg from "./ChatMsg";
+import Streaming from "./Streaming";
 
 const App = () => {
   return (
@@ -9,11 +10,7 @@ const App = () => {
       <main>
         <div class="phone">
           <div class="app">
-            <div class="streaming"></div>
-            <div class="shades">
-              <div class="top-shade"></div>
-              <div class="bottom-shade"></div>
-            </div>
+            <Streaming />
             <div class="ui">
               <div class="top-ui">
                 <div class="host-info">
@@ -33,6 +30,7 @@ const App = () => {
               <div class="chatroom">
                 <div class="fade-shade"></div>
                 <div class="msgs">
+                  <ChatMsg />
                   <ChatMsg />
                   <ChatMsg />
                 </div>
