@@ -8,8 +8,8 @@ export default function ChatMsg(props) {
         <Hexagon size={12} />
         {props.level}
       </span>
-      <span className="t-title2 msg-nickname">{props.name}:</span>
-      <span>{props.msgContent}</span>
+      <span className="t-bold2 msg-nickname">{props.name}:</span>
+      <span className="t-bold2">{props.msgContent}</span>
     </span>
   );
 }

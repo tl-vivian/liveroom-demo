@@ -31,7 +31,6 @@ class Chatroom extends React.Component {
     return (
       <div className="bottom">
         <div className="chatroom">
-          <div className="fade-shade"></div>
           <div className="msgs">
             {this.state.messages.map(function (msg) {
               const { name, level, msgContent, id } = msg;
