@@ -3,11 +3,14 @@ import ReactDOM, { render } from "react-dom";
 import * as Icon from "react-feather";
 import Chatroom from "./Chatroom";
 import Streaming from "./Streaming";
+import ToggleButtons from "./ToggleButtons";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      currentPhone: 1,
+    };
   }
 
   render() {
@@ -37,6 +40,11 @@ class App extends React.Component {
               </div>
             </div>
           </div>
+          <ToggleButtons
+            name={"phone-variation"}
+            options={["iphone 8", "iphone 8 plus"]}
+            checked={1}
+          />
         </main>
         <aside></aside>
       </div>
