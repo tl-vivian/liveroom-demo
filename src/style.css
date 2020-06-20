@@ -273,10 +273,23 @@ svg.feather {
   height: 12px;
   width: 12px;
 }
+.bottom {
+  display: flex;
+  flex-direction: column;
+}
+.chat-input {
+  position: relative;
+  width: calc(100% - 48px);
+}
+.chat-input button {
+  position: absolute;
+  right: 0;
+  background: none;
+}
 
-input.chat-input {
+input.chat-input-box {
   height: 40px;
-  width: 50%;
+  width: 100%;
   border-radius: 20px;
   border: 1px solid var(--white0);
   background-color: var(--white25);
@@ -285,18 +298,18 @@ input.chat-input {
   font-size: 14px;
   text-shadow: var(--text-shadow-for-white);
 }
-.chat-input::placeholder {
+.chat-input-box::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--white);
   opacity: 1; /* Firefox */
 }
-.chat-input:focus {
+.chat-input-box:focus {
   background-color: var(--white25);
   border: 1px solid var(--white50);
 }
 .chatroom {
   width: calc(100% - 112px);
-  height: 20%;
+  height: 160px;
   /* border: 1px solid #fff; */
   position: relative;
   -webkit-mask-image: linear-gradient(

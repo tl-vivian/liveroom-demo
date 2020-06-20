@@ -1,19 +1,15 @@
 import React from "react";
 import { Hexagon } from "react-feather";
 
-export default function ChatMsg() {
+export default function ChatMsg(props) {
   return (
     <span className="msg t-body2">
       <span className="msg-lv-badge t-level-badge-number">
         <Hexagon size={12} />
-        99
+        {props.level}
       </span>
-      <span className="msg-lv-badge t-level-badge-number">
-        <Hexagon size={12} />
-        99
-      </span>
-      <span className="t-title2 msg-nickname">Nickname:</span>
-      <span>from component</span>
+      <span className="t-title2 msg-nickname">{props.name}:</span>
+      <span>{props.msgContent}</span>
     </span>
   );
 }
