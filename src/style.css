@@ -32,7 +32,7 @@ button:focus {
   --secondary5: #ffa25a;
   --secondary3: #92dcd0;
   --secondary4: #926ac7;
-  --ivory:rgba(255,236,214,1);
+  --ivory: rgba(255, 236, 214, 1);
   --black: #222222;
   --black75: rgba(34, 34, 34, 0.75);
   --black50: rgba(34, 34, 34, 0.5);
@@ -107,10 +107,12 @@ button:focus {
 /* --------------------------- */
 
 body {
-  height: 100vh;
-  display: flex;
   font-family: "Noto Sans TC";
   z-index: 1;
+}
+.content {
+  display: flex;
+  height: 100vh;
 }
 
 main {
@@ -324,7 +326,7 @@ input.chat-input {
   margin: 2px;
   vertical-align: middle;
 }
-.msg-nickname{
+.msg-nickname {
   color: var(--ivory);
 }
 .msg-lv-badge {
