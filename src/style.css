@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap");
 
 /* ---- CSS Reset ---- */
 
@@ -83,6 +83,11 @@ button:focus {
 .t-body2 {
   font-size: 14px;
   font-weight: 300;
+  line-height: 1.43;
+}
+.t-bold2 {
+  font-size: 14px;
+  font-weight: 700;
   line-height: 1.43;
 }
 
@@ -207,13 +212,6 @@ aside {
   flex: 1;
 }
 
-/* .fade-shade {
-  position: absolute;
-  background: linear-gradient(rgba(0, 0, 0, 100), rgba(0, 0, 0, 0));
-  top: 0;
-  height: 50px;
-  width: 100%;
-} */
 .bottom-ui {
   margin-top: 16px;
   display: flex;
@@ -228,11 +226,6 @@ aside {
   background-size: 32px 32px;
   background-position: center center;
   background-repeat: no-repeat;
-}
-svg.feather {
-  /* stroke-width: 1; */
-  height: 20px;
-  width: 20px;
 }
 
 .icon-button {
