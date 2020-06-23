@@ -42,8 +42,7 @@ class App extends React.Component {
           </div>
           <ToggleButtons
             name={"phone-variation"}
-            options={["iphone 8", "iphone 8 plus"]}
-            checked={1}
+            options={["iphone 8", "iphone 8 plus", "android"]}
           />
         </main>
         <aside></aside>
