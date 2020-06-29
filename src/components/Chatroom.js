@@ -7,9 +7,27 @@ class Chatroom extends React.Component {
     super(props);
     this.state = {
       messages: [
-        { id: 1, name: "A", level: "10", msgContent: "Hi, I'm A" },
-        { id: 2, name: "B", level: "20", msgContent: "Hi, I'm B" },
-        { id: 3, name: "C", level: "30", msgContent: "Hi, I'm C" },
+        {
+          id: 1,
+          name: "A",
+          level: 30,
+          levelNumber: "10",
+          msgContent: "Hi, I'm A",
+        },
+        {
+          id: 2,
+          name: "B",
+          level: 30,
+          levelNumber: "20",
+          msgContent: "Hi, I'm B",
+        },
+        {
+          id: 3,
+          name: "C",
+          level: 30,
+          levelNumber: "30",
+          msgContent: "Hi, I'm C",
+        },
       ],
       typing: "",
     };
