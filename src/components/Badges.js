@@ -1,26 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-import { levelBadge } from "../assets";
+import { levelBadgeSmall } from "../assets";
 
-const styledLevelBadgeSmall = styled.span`
+const StyledLevelBadgeSmall = styled.span`
   display: inline-block;
-  background: url(${levelBadge.BronzeSmall});
   height: 20px;
   border-radius: 4px;
   width: 36px;
+  position:relative;
 `;
 
-const styledLevelNumber = styled.p`
+const StyledLevelNumber = styled.p`
   font-size: 12px;
   font-weight: 500;
   color: var(--white);
+  position:absolute;
+  left:16px;
+  top:2px;
 `;
-export const levelBadgeSmall = (props) => {
+
+
+export const LevelBadgeSmall = (props) => {
   // props with which level and level number
   return (
-    <styledLevelBadgeSmall>
-      <Hexagon size={12} />
-      <styledLevelNumber>{props.levelNumber}</styledLevelNumber>
-    </styledLevelBadgeSmall>
+    <StyledLevelBadgeSmall >
+      <img src={levelBadgeSmall[props.level]}/>
+      <StyledLevelNumber>{props.levelNumber}</StyledLevelNumber>
+    </StyledLevelBadgeSmall>
   );
 };

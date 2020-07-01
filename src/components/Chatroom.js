@@ -8,24 +8,33 @@ class Chatroom extends React.Component {
     this.state = {
       messages: [
         {
-          id: 1,
-          name: "A",
-          level: 30,
-          levelNumber: "10",
+          user:
+          {
+            id: 1,
+            name: "A",
+            level: "Bronze",
+            levelNumber: "10"
+          },
           msgContent: "Hi, I'm A",
         },
         {
-          id: 2,
-          name: "B",
-          level: 30,
-          levelNumber: "20",
+          user:
+          {
+            id: 1,
+            name: "A",
+            level: "Bronze",
+            levelNumber: "10"
+          },
           msgContent: "Hi, I'm B",
         },
         {
-          id: 3,
-          name: "C",
-          level: 30,
-          levelNumber: "30",
+          user:
+          {
+            id: 1,
+            name: "A",
+            level: "Bronze",
+            levelNumber: "10"
+          },
           msgContent: "Hi, I'm C",
         },
       ],
@@ -36,9 +45,12 @@ class Chatroom extends React.Component {
     e.preventDefault();
     if (this.state.typing) {
       const newMsg = {
-        id: 4,
-        name: "小天使",
-        level: "30",
+        user:{       
+          id: 4,
+          name: "小天使",
+          level: "DarkGold",
+          levelNumber:"99"
+        },
         msgContent: this.state.typing,
       };
 
@@ -51,13 +63,12 @@ class Chatroom extends React.Component {
         <div className="chatroom">
           <div className="msgs">
             {this.state.messages.map(function (msg) {
-              const { name, level, msgContent, id } = msg;
+              const { user,msgContent } = msg;
               return (
                 <ChatMsg
-                  name={name}
-                  level={level}
+                  user={user}
                   msgContent={msgContent}
-                  key={id}
+                  key
                 />
               );
             })}

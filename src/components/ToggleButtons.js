@@ -37,7 +37,7 @@ export default function ToggleButtons(props) {
     <StyledToggleButtons className={props.name}>
       {props.options.map(function (option, i) {
         return (
-          <li>
+          <li key={i}>
             <input
               type="radio"
               name={props.name}
