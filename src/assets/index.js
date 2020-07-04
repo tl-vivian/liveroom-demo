@@ -1,8 +1,24 @@
+//Level Badges
 import BronzeSmall from "./badge-levelBronze-chatroom-36x20.png";
 import SilverSmall from "./badge-levelSilver-chatroom-36x20.png";
 import GoldSmall from "./badge-levelGold-chatroom-36x20.png";
 import DiamondSmall from "./badge-levelDiamond-chatroom-36x20.png";
 import DarkGoldSmall from "./badge-levelDarkGold-chatroom-36x20.png";
+
+//Icons
+
+export * from './icons/ArrowIcon';
+// import Bulletin from './Icons/icon-bulletin.svg';
+// import Sofa from './Icons/icon-sofa.svg';
+// import ChevronDown from './Icons/icon-chevron-down.svg';
+// import Comment from './Icons/icon-comment-m-grey2.svg';
+// import Menu from './Icons/icon-menu-m.svg';
+// import Mic from './Icons/icon-mic-m.svg';
+// import MicMute from './Icons/icon-micmute-m.svg';
+// import Options from './Icons/icon-options-m-white.svg';
+// import Share from './Icons/icon-share-m-white.svg';
+
+
 
 export const levelBadgeSmall = {
   Bronze:BronzeSmall,
@@ -11,3 +27,4 @@ export const levelBadgeSmall = {
   Diamond:DiamondSmall,
   DarkGold:DarkGoldSmall,
 };
+

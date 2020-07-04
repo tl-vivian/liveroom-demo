@@ -1,6 +1,6 @@
 import React from "react";
 import ChatMsg from "./ChatMsg";
-import * as Icon from "react-feather";
+import IconButton from './IconButton';
 
 class Chatroom extends React.Component {
   constructor(props) {
@@ -76,9 +76,7 @@ class Chatroom extends React.Component {
         </div>
         <div className="bottom-ui">
           <form className="chat-input" onSubmit={this.handleSubmit}>
-            <button className="icon-button" type="submit">
-              <Icon.ArrowRight />
-            </button>
+              <IconButton/>
             <input
               type="text"
               className="chat-input-box"
@@ -87,9 +85,7 @@ class Chatroom extends React.Component {
               onChange={(e) => this.setState({ typing: e.target.value })}
             />
           </form>
-          <button className="icon-button">
-            <Icon.Gift />
-          </button>
+       <IconButton/>
         </div>
       </div>
     );

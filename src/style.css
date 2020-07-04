@@ -235,17 +235,6 @@ aside {
   background-repeat: no-repeat;
 }
 
-.icon-button {
-  border: none;
-  height: 40px;
-  width: 40px;
-  background-color: var(--white25);
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--white);
-}
 
 /* ----------------------- */
 
@@ -342,16 +331,4 @@ input.chat-input-box {
 .msg-nickname {
   color: var(--ivory);
 }
-.msg-lv-badge {
-  display: inline-block;
-  background-color: var(--primary50);
-  height: 18px;
-  border-radius: 9px;
-  padding: 2px 4px 2px 4px;
-  min-width: 30px;
-}
-.msg-lv-badge svg.feather {
-  width: 8px;
-  height: 8px;
-  fill: var(--white);
-}
+
