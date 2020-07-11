@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ArrowIcon} from '../assets'
 
 const StyledButton = styled.button`
     border: none;
@@ -13,10 +12,10 @@ const StyledButton = styled.button`
     align-items: center;
     color: var(--white);
 `
-export default function IconButton(){
+export default function IconButton(props){
     return(
     <StyledButton>
-        <ArrowIcon/>
+       {props.children}
     </StyledButton>
     )
 }

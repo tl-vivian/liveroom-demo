@@ -4,7 +4,9 @@ import Chatroom from "./Chatroom";
 import Streaming from "./Streaming";
 import ToggleButtons from "./ToggleButtons";
 import RoomInfo from './RoomInfo';
-import IconButton from './IconButton'
+import {ChevronDownIcon} from '../assets';
+import IconButton from './IconButton';
+
 
 const phones = [
 {
@@ -47,7 +49,9 @@ class App extends React.Component {
               <div className="ui">
                 <div className="top-ui">
                  <RoomInfo/>
-                <IconButton/>
+                <IconButton>
+                  <ChevronDownIcon/>
+                </IconButton>
                 </div>
                 <div className="clear-zone"></div>
                 <Chatroom />

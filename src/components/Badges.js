@@ -12,7 +12,7 @@ const StyledLevelBadgeSmall = styled.span`
 
 const StyledLevelNumber = styled.p`
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--white);
   position:absolute;
   left:16px;
