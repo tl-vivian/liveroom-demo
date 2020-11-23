@@ -1,66 +1,57 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Chatroom from "./Chatroom";
 import Streaming from "./Streaming";
 import ToggleButtons from "./ToggleButtons";
-import RoomInfo from './RoomInfo';
-import {ChevronDownIcon} from '../assets';
-import IconButton from './IconButton';
-
+import LiveChatUI from "./LiveChatUI";
 
 const phones = [
-{
-    phoneName:"iPhone 8",
-    width:"375px",
-    height:"667px"
+  {
+    phoneName: "iPhone 8",
+    width: "375px",
+    height: "667px",
   },
   {
-    phoneName:"iPhone 8 Plus",
-    width:"414px",
-    height:"736px"
+    phoneName: "iPhone 8 Plus",
+    width: "414px",
+    height: "736px",
   },
   {
-    phoneName:"Android",
-    width:"360px",
-    height:"640px"
-  }
-]
+    phoneName: "Android",
+    width: "360px",
+    height: "640px",
+  },
+];
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPhone: 0,
     };
-    
   }
- 
-  handlePhoneSize = (phoneOption)=>{
-    this.setState({currentPhone:phoneOption});
-  }
-  
+
+  handlePhoneSize = (phoneOption) => {
+    this.setState({ currentPhone: phoneOption });
+  };
+
   render() {
     return (
       <div className="content">
         <main>
-          <div className="phone" 
-              style={{width:phones[this.state.currentPhone].width,height:phones[this.state.currentPhone].height}} > 
+          <div
+            className="phone"
+            style={{
+              width: phones[this.state.currentPhone].width,
+              height: phones[this.state.currentPhone].height,
+            }}
+          >
             <div className="app">
               <Streaming />
-              <div className="ui">
-                <div className="top-ui">
-                 <RoomInfo/>
-                <IconButton>
-                  <ChevronDownIcon/>
-                </IconButton>
-                </div>
-                <div className="clear-zone"></div>
-                <Chatroom />
-              </div>
+              <LiveChatUI />
             </div>
           </div>
           <ToggleButtons
             name={"phone-sizes"}
-            options={phones.map((phone)=>phone.phoneName)}
+            options={phones.map((phone) => phone.phoneName)}
             handlePhone={this.handlePhoneSize}
             selected={this.state.currentPhone}
           />

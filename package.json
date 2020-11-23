@@ -30,6 +30,7 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
+    "framer": "^1.2.10",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
