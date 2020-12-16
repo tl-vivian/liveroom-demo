@@ -16,6 +16,7 @@ export * from "./icons/FireIcon";
 export * from "./icons/HeartPlusIcon";
 export * from "./icons/UserIcon";
 export * from "./icons/ShareIcon";
+export * from "./icons/BulletinIcon";
 // import Bulletin from './Icons/icon-bulletin.svg';
 // import Sofa from './Icons/icon-sofa.svg';
 // import ChevronDown from './Icons/icon-chevron-down.svg';

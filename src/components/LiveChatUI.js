@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ChatMsg from "./ChatMsg";
 import IconButton from "./IconButton";
 import RoomInfo from "./RoomInfo";
+import BulletinButton from "./BulletinButton";
 import {UserIcon,ShareIcon,XIcon,ArrowIcon, ScreenshotIcon} from "../assets";
 import animatedGiftButton from "../assets/giftButton.webp";
 
@@ -25,13 +26,19 @@ const UI = styled.div`
   justify-content: space-between;
 `;
 const TopControls = styled.div`
+height:48px;
   display: flex;
   justify-content: flex-end;
+  align-items:center;
   gap:8px;
   .host-info{
     position:absolute;
     
   }
+`;
+const SecondControls = styled.div`
+display: flex;
+justify-content: flex-end;
 `;
 const ClearZone = styled.div`
 flex: 1;
@@ -153,7 +160,7 @@ class LiveChatUI extends React.Component {
     return (
       <UIWrapper>
         <UI className="UI">
-          <TopControls>
+          <TopControls className="top-controls">
             <RoomInfo />
             <IconButton bgcolor="var(--black25)">
               <UserIcon />
@@ -165,6 +172,7 @@ class LiveChatUI extends React.Component {
               <XIcon />
             </IconButton>
           </TopControls>
+        <SecondControls className="second-controls"><BulletinButton/></SecondControls>
           <ClearZone />
           <ChatroomWrapper>
             <Messages>
