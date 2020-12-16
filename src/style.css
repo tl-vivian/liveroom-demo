@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  position: relative;
   /* outline: 1px red solid; */
 }
 
@@ -29,10 +30,12 @@ li {
 
 /* ---- styles from zeplin ---- */
 :root {
-  --primary: #eb5490;
-  --primary10: rgba(235, 84, 144, 0.1);
-  --primary25: rgba(235, 84, 144, 0.25);
-  --primary50: rgba(235, 84, 144, 0.5);
+  --primary: #f2694e;
+  --primary10: rgba(242, 105, 78 0.1);
+  --primary25: rgba(242, 105, 78, 0.25);
+  --primary50: rgba(242, 105, 78, 0.5);
+  --primaryLight: #fd856d;
+  --primaryDark: #d44d39;
   --secondary2: #ffc02d;
   --secondary1: #4fccf5;
   --secondary5: #ffa25a;
@@ -131,7 +134,7 @@ main {
   flex: 3;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   height: 100%;
   background-color: rgb(255, 242, 242);
@@ -198,15 +201,6 @@ aside {
   transform: rotate(180deg);
 }
 
-.top-ui {
-  display: flex;
-  justify-content: space-between;
-}
-.clear-zone {
-  /* background-color: rgb(172, 102, 102); */
-  flex: 1;
-}
-
 /* ---- some reusable component styles ---*/
 .avatar40 {
   height: 40px;
@@ -219,39 +213,6 @@ aside {
 
 /* ----------------------- */
 
-.host-info {
-  display: flex;
-  align-items: center;
-  height: 44px;
-  border-radius: 22px;
-  background-color: var(--white25);
-  padding-right: 16px;
-  color: var(--white);
-  text-shadow: var(--black50) 0px 0px 3px;
-}
-.host-status {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.host-live-data {
-  display: flex;
-  align-items: center;
-}
-
-.host-live-data svg.feather {
-  height: 12px;
-  width: 12px;
-}
-
-.msgs {
-  height: 100%;
-  max-width: 100%;
-  overflow: scroll;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-start;
-}
 .msg {
   background-color: var(--black40);
   border-radius: 4px;

@@ -3,12 +3,14 @@ import styled from "styled-components";
 import ChatMsg from "./ChatMsg";
 import IconButton from "./IconButton";
 import RoomInfo from "./RoomInfo";
-import { ChevronDownIcon } from "../assets";
-import { ArrowIcon, ScreenshotIcon, EmojiIcon } from "../assets";
+import {UserIcon,ShareIcon,XIcon,ArrowIcon, ScreenshotIcon} from "../assets";
 import animatedGiftButton from "../assets/giftButton.webp";
-import emojiPanel from "./EmojiPanel";
-import EmojiPanel from "./EmojiPanel";
 
+const UIWrapper = styled.div`
+height: 100%;
+width: 100%;
+position: absolute;
+`;
 const UI = styled.div`
   height: 100%;
   width: 100%;
@@ -22,6 +24,18 @@ const UI = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+const TopControls = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap:8px;
+  .host-info{
+    position:absolute;
+    
+  }
+`;
+const ClearZone = styled.div`
+flex: 1;
+`;
 const ChatroomWrapper = styled.div`
   width: calc(100% - 112px);
   height: 160px;
@@ -33,6 +47,15 @@ const ChatroomWrapper = styled.div`
     rgba(0, 0, 0, 1) 30% 100%
   );
 `;
+const Messages = styled.div`
+  height: 100%;
+  max-width: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+`;
+
 const BottomControls = styled.div`
   margin-top: 16px;
   margin-left: -4px;
@@ -128,22 +151,28 @@ class LiveChatUI extends React.Component {
   };
   render() {
     return (
-      <div>
-        <UI>
-          <div className="top-ui">
+      <UIWrapper>
+        <UI className="UI">
+          <TopControls>
             <RoomInfo />
-            <IconButton>
-              <ChevronDownIcon />
+            <IconButton bgcolor="var(--black25)">
+              <UserIcon />
             </IconButton>
-          </div>
-          <div className="clear-zone"></div>
+            <IconButton bgcolor="var(--black25)">
+              <ShareIcon />
+            </IconButton>
+            <IconButton bgcolor="var(--black25)">
+              <XIcon />
+            </IconButton>
+          </TopControls>
+          <ClearZone />
           <ChatroomWrapper>
-            <div className="msgs">
-              {this.state.messages.map(function (msg) {
+            <Messages>
+            {this.state.messages.map(function (msg) {
                 const { user, msgContent } = msg;
                 return <ChatMsg user={user} msgContent={msgContent} key />;
               })}
-            </div>
+            </Messages>
           </ChatroomWrapper>
           <BottomControls>
             <form className="chat-input" onSubmit={this.handleSubmit}>
@@ -159,15 +188,14 @@ class LiveChatUI extends React.Component {
               />
             </form>
             <IconButton>
-              <EmojiIcon />
+              <ScreenshotIcon />
             </IconButton>
             <IconButton>
               <img src={animatedGiftButton} width="100%" />
             </IconButton>
           </BottomControls>
         </UI>
-        <EmojiPanel />
-      </div>
+      </UIWrapper>
     );
   }
 }

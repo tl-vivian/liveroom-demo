@@ -8,9 +8,14 @@ import DarkGoldSmall from "./badge-levelDarkGold-chatroom-36x20.png";
 //Icons
 
 export * from "./icons/ArrowIcon";
+export * from "./icons/XIcon";
 export * from "./icons/ChevronDownIcon";
 export * from "./icons/ScreenshotIcon";
 export * from "./icons/EmojiIcon";
+export * from "./icons/FireIcon";
+export * from "./icons/HeartPlusIcon";
+export * from "./icons/UserIcon";
+export * from "./icons/ShareIcon";
 // import Bulletin from './Icons/icon-bulletin.svg';
 // import Sofa from './Icons/icon-sofa.svg';
 // import ChevronDown from './Icons/icon-chevron-down.svg';

@@ -7,6 +7,7 @@ const ArrowIconWrapper = styled.svg`
   display:flex;
   justify-content:center;
   align-items:center;
+  fill:currentColor;
 `;
 
 export const ArrowIcon = () => (
