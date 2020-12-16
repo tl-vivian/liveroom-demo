@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ChatMsg from "./ChatMsg";
 import IconButton from "./IconButton";
 import RoomInfo from "./RoomInfo";
+import RoomTopic from "./RoomTopic";
 import BulletinButton from "./BulletinButton";
 import {UserIcon,ShareIcon,XIcon,ArrowIcon, ScreenshotIcon} from "../assets";
 import animatedGiftButton from "../assets/giftButton.webp";
@@ -38,7 +39,8 @@ height:48px;
 `;
 const SecondControls = styled.div`
 display: flex;
-justify-content: flex-end;
+justify-content: space-between;
+align-items:center;
 `;
 const ClearZone = styled.div`
 flex: 1;
@@ -172,7 +174,7 @@ class LiveChatUI extends React.Component {
               <XIcon />
             </IconButton>
           </TopControls>
-        <SecondControls className="second-controls"><BulletinButton/></SecondControls>
+        <SecondControls className="second-controls"><RoomTopic/><BulletinButton/></SecondControls>
           <ClearZone />
           <ChatroomWrapper>
             <Messages>
