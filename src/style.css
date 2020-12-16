@@ -125,26 +125,7 @@ body {
   font-family: "Noto Sans TC";
   z-index: 1;
 }
-.content {
-  display: flex;
-  height: 100vh;
-}
 
-main {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: rgb(255, 242, 242);
-}
-
-aside {
-  flex: 1;
-  height: 100%;
-  background-color: rgb(199, 212, 231);
-}
 .phone {
   position: relative;
 }
