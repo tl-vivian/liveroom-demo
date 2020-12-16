@@ -20,8 +20,8 @@ const UI = styled.div`
   z-index: 10;
   padding-left: 16px;
   padding-right: 16px;
-  padding-top: 24px;
-  padding-bottom: 16px;
+  padding-top: ${props=>(props.type=="iphoneX")?"44px":"24px"};
+  padding-bottom: ${props=>(props.type=="iphoneX")?"50px":"16px"};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -160,8 +160,8 @@ class LiveChatUI extends React.Component {
   };
   render() {
     return (
-      <UIWrapper>
-        <UI className="UI">
+      <UIWrapper >
+        <UI className="UI" {...this.props}>
           <TopControls className="top-controls">
             <RoomInfo />
             <IconButton bgcolor="var(--black25)">

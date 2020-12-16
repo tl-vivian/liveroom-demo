@@ -1,24 +1,56 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import styled from "styled-components";
 import Streaming from "./Streaming";
 import ToggleButtons from "./ToggleButtons";
 import LiveChatUI from "./LiveChatUI";
+
+const StyledApp = styled.div`
+display: flex;
+height: 100vh;
+
+
+main {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(255, 242, 242);
+}
+
+aside {
+  flex: 1;
+  height: 100%;
+  background-color: rgb(199, 212, 231);
+}
+`;
 
 const phones = [
   {
     phoneName: "iPhone 8",
     width: "375px",
     height: "667px",
+    type:"iphone"
   },
   {
     phoneName: "iPhone 8 Plus",
     width: "414px",
     height: "736px",
+    type:"iphone"
+  },
+  {
+    phoneName: "iPhone 11",
+    width: "375px",
+    height: "812px",
+    type:"iphoneX"
   },
   {
     phoneName: "Android",
     width: "360px",
     height: "640px",
+    type:"android"
   },
 ];
 class App extends React.Component {
@@ -35,7 +67,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="content">
+      <StyledApp>
         <main>
           <div
             className="phone"
@@ -46,7 +78,7 @@ class App extends React.Component {
           >
             <div className="app">
               <Streaming />
-              <LiveChatUI />
+              <LiveChatUI type={phones[this.state.currentPhone].type}/>
             </div>
           </div>
           <ToggleButtons
@@ -57,7 +89,8 @@ class App extends React.Component {
           />
         </main>
         <aside></aside>
-      </div>
+      </StyledApp>
+
     );
   }
 }

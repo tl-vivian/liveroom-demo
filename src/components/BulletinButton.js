@@ -6,7 +6,7 @@ const StyledBulletinButton = styled.div`
     height:40px;
     width:64px;
     display:flex;
-    justifu-content:center;
+    justify-content:flex-end;
     align-items:center;
     color:var(--white);
     .bulletin-button{
