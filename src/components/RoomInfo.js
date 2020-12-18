@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from "styled-components";
+import styled ,{keyframes}from "styled-components";
 import Avatar from './Avatar';
 import IconButton from './IconButton';
 import {FireIcon,HeartPlusIcon} from '../assets';
@@ -17,6 +17,9 @@ const RoomInfoWrapper = styled.div`
   background-color: var(--black25);
   color: var(--white);
   text-shadow: var(--black50) 0px 0px 3px;
+  .host-nickname{
+    width:auto;
+  }
   .host-status {
     display: flex;
     justify-content: center;
@@ -38,12 +41,36 @@ const RoomInfoWrapper = styled.div`
     background-color:transparent;
   }
 `;
+
+const marquee = keyframes`
+from {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+to {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+`;
+const HostnameMarquee = styled.span`
+display : flex;
+flex-shrink: 0;
+overflow:hidden;
+height: 100%;
+width:100px;
+align-items: center;
+animation: ${marquee} 20s linear infinite;
+`;
+
 export default function RoomInfo(){
 return(
     <RoomInfoWrapper className="host-info">
     <Avatar width={48} height={48} />
     <div className="host-status">
+      <HostnameMarquee className="room-info-marquee">
       <p className="host-nickname t-caption">Host Nickname</p>
+      <p className="host-nickname t-caption">Host Nickname</p>
+      </HostnameMarquee>
       <span className="host-live-data t-caption">
         <FireIcon/> 123456
       </span>
