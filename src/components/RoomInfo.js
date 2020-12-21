@@ -17,9 +17,7 @@ const RoomInfoWrapper = styled.div`
   background-color: var(--black25);
   color: var(--white);
   text-shadow: var(--black50) 0px 0px 3px;
-  .host-nickname{
-    width:auto;
-  }
+
   .host-status {
     display: flex;
     justify-content: center;
@@ -56,10 +54,13 @@ const HostnameMarquee = styled.span`
 display : flex;
 flex-shrink: 0;
 overflow:hidden;
-height: 100%;
-width:100px;
+height: 16px;
+width:72px;
 align-items: center;
-animation: ${marquee} 20s linear infinite;
+.host-nickname{
+  animation: ${marquee} 20s linear infinite;
+  min-width:100px;
+}
 `;
 
 export default function RoomInfo(){
