@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Streaming from "./Streaming";
 import ToggleButtons from "./ToggleButtons";
 import LiveChatUI from "./LiveChatUI";
+import WelcomeEffect from "./WelcomeEffect";
 
 const StyledApp = styled.div`
 display: flex;
@@ -58,6 +59,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentPhone: 0,
+      showWelcomeEffect:true,
     };
   }
 
@@ -77,8 +79,10 @@ class App extends React.Component {
             }}
           >
             <div className="app">
+            <WelcomeEffect />
               <Streaming />
               <LiveChatUI type={phones[this.state.currentPhone].type}/>
+              
             </div>
           </div>
           <ToggleButtons
@@ -88,7 +92,9 @@ class App extends React.Component {
             selected={this.state.currentPhone}
           />
         </main>
-        <aside></aside>
+        <aside>
+          <button>進場特效</button>
+        </aside>
       </StyledApp>
 
     );

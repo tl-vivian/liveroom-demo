@@ -1,9 +1,14 @@
 //Level Badges
-import BronzeSmall from "./badge-levelBronze-chatroom-36x20.png";
-import SilverSmall from "./badge-levelSilver-chatroom-36x20.png";
-import GoldSmall from "./badge-levelGold-chatroom-36x20.png";
-import DiamondSmall from "./badge-levelDiamond-chatroom-36x20.png";
-import DarkGoldSmall from "./badge-levelDarkGold-chatroom-36x20.png";
+import BronzeChatroom from "./badge-levelBronze-chatroom-36x20.png";
+import SilverChatroom from "./badge-levelSilver-chatroom-36x20.png";
+import GoldChatroom from "./badge-levelGold-chatroom-36x20.png";
+import DiamondChatroom from "./badge-levelDiamond-chatroom-36x20.png";
+import DarkGoldChatroom from "./badge-levelDarkGold-chatroom-36x20.png";
+import Bronze from "./badge-levelBronze-36x20.png";
+import Silver from "./badge-levelSilver-36x20.png";
+import Gold from "./badge-levelGold-36x20.png";
+import Diamond from "./badge-levelDiamond-36x20.png";
+import DarkGold from "./badge-levelDarkGold-36x20.png";
 
 //Icons
 
@@ -27,10 +32,18 @@ export * from "./icons/BulletinIcon";
 // import Options from './Icons/icon-options-m-white.svg';
 // import Share from './Icons/icon-share-m-white.svg';
 
-export const levelBadgeSmall = {
-  Bronze: BronzeSmall,
-  Silver: SilverSmall,
-  Gold: GoldSmall,
-  Diamond: DiamondSmall,
-  DarkGold: DarkGoldSmall,
+export const levelBadgeChatroom = {
+  Bronze: BronzeChatroom,
+  Silver: SilverChatroom,
+  Gold: GoldChatroom,
+  Diamond: DiamondChatroom,
+  DarkGold: DarkGoldChatroom,
+};
+
+export const levelBadge = {
+  Bronze: Bronze,
+  Silver: Silver,
+  Gold: Gold,
+  Diamond: Diamond,
+  DarkGold: DarkGold,
 };

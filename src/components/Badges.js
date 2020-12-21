@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { levelBadgeSmall } from "../assets";
+import { levelBadgeChatroom,levelBadge } from "../assets";
 
-const StyledLevelBadgeSmall = styled.span`
+const StyledLevelBadge = styled.span`
   display: inline-block;
   height: 20px;
   border-radius: 4px;
@@ -16,16 +16,26 @@ const StyledLevelNumber = styled.p`
   color: var(--white);
   position:absolute;
   left:16px;
-  top:2px;
+  top:1px;
 `;
 
 
-export const LevelBadgeSmall = (props) => {
+export const LevelBadgeChatroom = (props) => {
   // props with which level and level number
   return (
-    <StyledLevelBadgeSmall >
-      <img src={levelBadgeSmall[props.level]}/>
+    <StyledLevelBadge >
+      <img src={levelBadgeChatroom[props.level]}/>
       <StyledLevelNumber>{props.levelNumber}</StyledLevelNumber>
-    </StyledLevelBadgeSmall>
+    </StyledLevelBadge>
+  );
+};
+
+export const LevelBadge = (props) => {
+  // props with which level and level number
+  return (
+    <StyledLevelBadge >
+      <img src={levelBadge[props.level]}/>
+      <StyledLevelNumber>{props.levelNumber}</StyledLevelNumber>
+    </StyledLevelBadge>
   );
 };
