@@ -9,7 +9,7 @@ import WelcomeEffect from "./WelcomeEffect";
 const StyledApp = styled.div`
 display: flex;
 height: 100vh;
-
+overflow:hidden;
 
 main {
   flex: 3;
@@ -79,10 +79,11 @@ class App extends React.Component {
             }}
           >
             <div className="app">
-            <WelcomeEffect />
+           
               <Streaming />
-              <LiveChatUI type={phones[this.state.currentPhone].type}/>
-              
+              <LiveChatUI type={phones[this.state.currentPhone].type}>
+              <WelcomeEffect level="Diamond"/>
+              </LiveChatUI>
             </div>
           </div>
           <ToggleButtons

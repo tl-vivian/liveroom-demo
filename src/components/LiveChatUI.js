@@ -12,6 +12,7 @@ const UIWrapper = styled.div`
 height: 100%;
 width: 100%;
 position: absolute;
+overflow:hidden;
 `;
 const UI = styled.div`
   height: 100%;
@@ -161,6 +162,7 @@ class LiveChatUI extends React.Component {
   render() {
     return (
       <UIWrapper >
+        {this.props.children}
         <UI className="UI" {...this.props}>
           <TopControls className="top-controls">
             <RoomInfo />
