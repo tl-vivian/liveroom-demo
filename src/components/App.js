@@ -18,7 +18,7 @@ main {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: rgb(255, 242, 242);
+  background-color: var(--black95);
 }
 
 aside {

@@ -5,7 +5,7 @@ const StyledToggleButtons = styled.ul`
   display: flex;
   margin:0.2rem;
   li {
-    color: var(--secondary3);
+    color: var(--white25);
     text-align: center;
     margin: 4px;
 
@@ -18,13 +18,13 @@ const StyledToggleButtons = styled.ul`
       min-width: 64px;
       height: 100%;
       padding: 2px 8px;
-      background-color: white;
+      background-color: none;
       border-radius: 21px;
-      border: 1px solid var(--white);
+      border: 1px solid var(--white25);
       font-size:14px;
     }
     input:checked + label {
-      background-color: var(--secondary3);
+      background-color: var(--white25);
       color: white;
       border: 1px solid transparent;
       border-radius: 21px;
