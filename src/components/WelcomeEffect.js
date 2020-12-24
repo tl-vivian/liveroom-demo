@@ -21,7 +21,7 @@ const slide = keyframes`
 
 const StyledWelcomeEffect = styled.div`
     position:absolute;
-    top:100px;
+    top:60%;
     z-index:100;
     width:360px;
     height:32px;

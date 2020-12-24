@@ -24,7 +24,13 @@ main {
 aside {
   flex: 1;
   height: 100%;
-  background-color: rgb(199, 212, 231);
+  background-color: var(--black);
+  padding:1rem;
+  color:var(--lightGrey1);
+  label{
+    margin:16px;
+  }
+
 }
 `;
 
@@ -59,7 +65,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentPhone: 0,
-      showWelcomeEffect:true,
+      showWelcomeEffect:false,
     };
   }
 
@@ -82,7 +88,7 @@ class App extends React.Component {
            
               <Streaming />
               <LiveChatUI type={phones[this.state.currentPhone].type}>
-              <WelcomeEffect level="Diamond"/>
+              {this.state.showWelcomeEffect&&<WelcomeEffect level="Diamond"/>}
               </LiveChatUI>
             </div>
           </div>
@@ -94,7 +100,8 @@ class App extends React.Component {
           />
         </main>
         <aside>
-          <button>進場特效</button>
+          <input id="welcome-effect" type="checkbox" onChange={()=>this.setState({showWelcomeEffect:!this.state.showWelcomeEffect})}/>
+          <label for="welcome-effect" className="tl-title2">進場特效</label>
         </aside>
       </StyledApp>
 
