@@ -46,11 +46,12 @@ aside {
     justify-content:space-between;
     margin:8px 0;
     label{
-    color:var(--grey2);
+      color:var(--grey2);
+      flex-shrink:0;
+      margin-right:4px;
     }
     input{
-      max-width:30%;
-      flex-basis: content;
+      flex:1 1 10px;
       background-color:var(--grey1);
       border-radius:4px;
       color:var(--roseBrown);
@@ -152,12 +153,12 @@ class App extends React.Component {
               <summary>跑馬燈<input id="marquee-effect" type="checkbox" onChange={()=>this.setState({marquee:{...this.state.marquee,show:!this.state.marquee.show}})}/></summary>
     
               <div className="option-input">
-                <label className="t-body2" htmlFor="marquee-duration">長度（秒數）</label>
+                <label className="t-body2" htmlFor="marquee-duration">長度(s)</label>
                 <input id="marquee-duration" type="text" value={this.state.marquee.duration} onChange={this.handleMarqueeDuration}/>
               </div>
               <div className="option-input">
-                <label className="t-body2" htmlFor="marquee-duration">內容</label>
-                <input id="marquee-duration" type="text" value={this.state.marquee.content} onChange={this.handleMarqueeContent}/>
+                <label className="t-body2" htmlFor="marquee-content">內容</label>
+                <input id="marquee-content" type="text" value={this.state.marquee.content} onChange={this.handleMarqueeContent}/>
               </div>
             </details>
 
