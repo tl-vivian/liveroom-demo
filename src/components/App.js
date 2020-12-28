@@ -5,6 +5,7 @@ import Streaming from "./Streaming";
 import ToggleButtons from "./ToggleButtons";
 import LiveChatUI from "./LiveChatUI";
 import WelcomeEffect from "./WelcomeEffect";
+import Marquee from "./Marquee"
 
 const StyledApp = styled.div`
 display: flex;
@@ -27,12 +28,41 @@ aside {
   background-color: var(--black);
   padding:1rem;
   color:var(--lightGrey1);
-  label{
-    margin:16px;
+  display:flex;
+  flex-direction:column;
+  summary{
+    margin-bottom:16px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    input{
+      position:absolute;
+      right:0;
+    }
   }
-
+  .option-input{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin:8px 0;
+    label{
+    color:var(--grey2);
+    }
+    input{
+      max-width:30%;
+      flex-basis: content;
+      background-color:var(--grey1);
+      border-radius:4px;
+      color:var(--roseBrown);
+      padding:4px 8px;
+      text-align:center;
+      font-weight:bold;
+    }
+  }
 }
 `;
+
+
 
 const phones = [
   {
@@ -60,18 +90,31 @@ const phones = [
     type:"android"
   },
 ];
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPhone: 0,
       showWelcomeEffect:false,
+      marquee:{
+        show:false,
+        duration:3,
+        content:"跑馬燈~跑馬燈~跑馬燈~跑馬燈~跑馬燈~"
+      }
     };
   }
 
   handlePhoneSize = (phoneOption) => {
     this.setState({ currentPhone: phoneOption });
   };
+
+  handleMarqueeDuration = (event)=>{
+  this.setState({marquee:{...this.state.marquee, duration:event.target.value}});
+ }
+ handleMarqueeContent = (event)=>{
+  this.setState({marquee:{...this.state.marquee, content:event.target.value}});
+ }
 
   render() {
     return (
@@ -89,6 +132,7 @@ class App extends React.Component {
               <Streaming />
               <LiveChatUI type={phones[this.state.currentPhone].type}>
               {this.state.showWelcomeEffect&&<WelcomeEffect level="Diamond"/>}
+              {this.state.marquee.show&&<Marquee duration={this.state.marquee.duration} content={this.state.marquee.content}/>}
               </LiveChatUI>
             </div>
           </div>
@@ -100,8 +144,23 @@ class App extends React.Component {
           />
         </main>
         <aside>
-          <input id="welcome-effect" type="checkbox" onChange={()=>this.setState({showWelcomeEffect:!this.state.showWelcomeEffect})}/>
-          <label for="welcome-effect" className="tl-title2">進場特效</label>
+      
+            <details className="control-options welcome-effect-options">
+              <summary>進場特效<input id="welcome-effect" type="checkbox" onChange={()=>this.setState({showWelcomeEffect:!this.state.showWelcomeEffect})}/></summary>
+            </details>
+            <details className="control-options marquee-effect-options">
+              <summary>跑馬燈<input id="marquee-effect" type="checkbox" onChange={()=>this.setState({marquee:{...this.state.marquee,show:!this.state.marquee.show}})}/></summary>
+    
+              <div className="option-input">
+                <label className="t-body2" htmlFor="marquee-duration">長度（秒數）</label>
+                <input id="marquee-duration" type="text" value={this.state.marquee.duration} onChange={this.handleMarqueeDuration}/>
+              </div>
+              <div className="option-input">
+                <label className="t-body2" htmlFor="marquee-duration">內容</label>
+                <input id="marquee-duration" type="text" value={this.state.marquee.content} onChange={this.handleMarqueeContent}/>
+              </div>
+            </details>
+
         </aside>
       </StyledApp>
 
