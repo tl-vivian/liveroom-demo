@@ -3,7 +3,7 @@ import styled ,{keyframes}from "styled-components";
 import Avatar from './Avatar';
 import IconButton from './IconButton';
 import {FireIcon,HeartPlusIcon} from '../assets';
-import * as Icon from "react-feather";
+import AvatarImage from "../assets/img2.png";
 
 
 const RoomInfoWrapper = styled.div`
@@ -66,7 +66,7 @@ align-items: center;
 export default function RoomInfo(){
 return(
     <RoomInfoWrapper className="host-info">
-    <Avatar width={48} height={48} />
+    <Avatar width={48} height={48} imgSrc={AvatarImage}/>
     <div className="host-status">
       <HostnameMarquee className="room-info-marquee">
       <p className="host-nickname t-caption">Host Nickname</p>

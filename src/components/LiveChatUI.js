@@ -35,7 +35,6 @@ height:48px;
   gap:8px;
   .host-info{
     position:absolute;
-    
   }
 `;
 const SecondControls = styled.div`

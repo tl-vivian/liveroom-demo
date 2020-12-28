@@ -5,12 +5,13 @@ import * as Icon from "react-feather";
 
 const AvatarWrapper = styled.div`
   border-radius:100%;
-  background-color:lavender;
+  background-image:url(${props=>props.imgSrc});
+  background-size:cover;
 `;
 export default function Avatar(props){
 return(
-    <AvatarWrapper className="avatar">
-    <div style={{
+    <AvatarWrapper className="avatar" {...props}>
+    <div {...props} style={{
               width: props.width,
               height: props.height,
             }}></div>
