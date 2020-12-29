@@ -38,6 +38,7 @@ const StyledMarquee = styled.div`
     display:flex;
     align-items:center;
     padding:4px 8px;
+    margin-left:8px;
     border-radius:4px;
     top:80px;
     z-index:20;
