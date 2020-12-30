@@ -131,7 +131,7 @@ class App extends React.Component {
             <div className="app">
            
               <Streaming />
-              <LiveChatUI type={phones[this.state.currentPhone].type}>
+              <LiveChatUI position={1} type={phones[this.state.currentPhone].type}>
               {this.state.showWelcomeEffect&&<WelcomeEffect level="Diamond"/>}
               {this.state.marquee.show&&<Marquee duration={this.state.marquee.duration} content={this.state.marquee.content}/>}
               </LiveChatUI>
