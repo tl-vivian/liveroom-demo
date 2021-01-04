@@ -66,7 +66,7 @@ align-items: center;
 export default function RoomInfo(){
 return(
     <RoomInfoWrapper className="host-info">
-    <Avatar width={48} height={48} imgSrc={AvatarImage}/>
+    <Avatar width={48} height={48} imgsrc={AvatarImage}/>
     <div className="host-status">
       <HostnameMarquee className="room-info-marquee">
       <p className="host-nickname t-caption">Host Nickname</p>

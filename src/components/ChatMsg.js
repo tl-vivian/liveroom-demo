@@ -2,7 +2,6 @@ import React from "react";
 import { LevelBadge } from "./Badges";
 
 export default function ChatMsg(props) {
-  console.log("chatmessage",props)
   const {user,msgContent} = props;
   return (
     <span className="msg t-body2">

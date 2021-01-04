@@ -146,10 +146,10 @@ class App extends React.Component {
         </main>
         <aside>
       
-            <details className="control-options welcome-effect-options">
+            <details className="control-options welcome-effect-options" open>
               <summary>進場特效<input id="welcome-effect" type="checkbox" onChange={()=>this.setState({showWelcomeEffect:!this.state.showWelcomeEffect})}/></summary>
             </details>
-            <details className="control-options marquee-effect-options">
+            <details className="control-options marquee-effect-options" open>
               <summary>跑馬燈<input id="marquee-effect" type="checkbox" onChange={()=>this.setState({marquee:{...this.state.marquee,show:!this.state.marquee.show}})}/></summary>
     
               <div className="option-input">
