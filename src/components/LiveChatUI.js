@@ -25,7 +25,7 @@ const PageContainer = styled.div`
 height:100%;
 width:300%;
 display:flex;
-left:-${props=>props.position*100}%;
+// left:-${props=>props.position*100}%;
 `;
 const Page = styled.div`
   height: 100%;
@@ -39,7 +39,7 @@ const Page = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // scroll-snap-align:start;
+  scroll-snap-align:center;
 
 `;
 const TopControls = styled.div`
@@ -157,13 +157,11 @@ class LiveChatUI extends React.Component {
       ],
       typing: "",
       isDown:false,
-      mouse:{
-        startX:0,
-        startY:0,
-        currentX:0,
-        currentY:0,
-        dx:0
-      },
+      startX:0,
+      startY:0,
+      currentX:0,
+      currentY:0,
+      dx:0,
       offset:{},
       scrollLeft:0
     };
@@ -174,9 +172,7 @@ class LiveChatUI extends React.Component {
     // 目前這樣寫的話，再改了 phone type 的時候 offset 數字會不對
     // 應該要在修改 phone type 的時候更新這個數字
   }
-  componentDidUpdate(){
-    this.pages.current.scrollLeft=this.state.scrollLeft;
-  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.state.typing) {
@@ -195,24 +191,31 @@ class LiveChatUI extends React.Component {
   };
   handleMouse = (e)=>{
     if (e.type === "mousedown") {
-      this.setState({ isDown: true,mouse:{...this.state.mouse,startX:e.clientX-this.state.offset.x,startY:e.clientY-this.state.offset.y}});
+      this.setState({ isDown: true,
+                      startX:e.clientX-this.state.offset.x,
+                      startY:e.clientY-this.state.offset.y,
+                      scrollLeft:this.pages.current.scrollLeft
+                    });
     } else{
       this.setState({ isDown: false});
     }
-    
+
   }
 
   handleMouseMove=(e)=>{
-    const dx = e.clientX-this.state.offset.x-this.state.mouse.startX;
-    if(this.isDown){
-    this.setState({ mouse:{...this.state.mouse,dx:dx}});
+    if(this.state.isDown){
+      const currentX = e.clientX-this.state.offset.x;
+      const currentY = e.clientY-this.state.offset.y;
+      const dx = currentX-this.state.startX;
+      this.pages.current.scrollLeft = this.state.scrollLeft - dx;
+      console.log(this.state.currentX,this.state.currentY,dx)
     }
+    
   }
   render() {
-    console.log(this.state.mouse.startX,this.state.mouse.dx)
     return (
 
-      <UIWrapper className="UI" ref={this.pages}  onClick={this.handleScroll}>
+      <UIWrapper className="UI" ref={this.pages}>
         {this.props.children}
         <PageContainer {...this.props}  onMouseDown={this.handleMouse} onMouseUp={this.handleMouse} onMouseMove={this.handleMouseMove}>
         <Page className="ui-none"></Page>
@@ -232,8 +235,8 @@ class LiveChatUI extends React.Component {
         <SecondControls className="second-controls"><RoomTopic/><BulletinButton/></SecondControls>
           <ClearZone />
           <h1>{`mouse is down: ${this.state.isDown}`}</h1>
-          <h3>{`startX: ${this.state.mouse.startX}`}</h3>  <h3>{`startY: ${this.state.mouse.startY}`}</h3>
-          <h3>{`endX: ${this.state.mouse.endX}`}</h3>  <h3>{`endY: ${this.state.mouse.endY}`}</h3>
+          <h3>{`startX: ${this.state.startX}`}</h3>  <h3>{`startY: ${this.state.startY}`}</h3>
+          <h3>{`endX: ${this.state.endX}`}</h3>  <h3>{`endY: ${this.state.endY}`}</h3>
           <ChatroomWrapper>
             <Messages>
             {this.state.messages.map(function (msg,index) {
