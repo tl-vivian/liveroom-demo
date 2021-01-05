@@ -159,8 +159,6 @@ class LiveChatUI extends React.Component {
       isDown:false,
       startX:0,
       startY:0,
-      currentX:0,
-      currentY:0,
       dx:0,
       offset:{},
       scrollLeft:0
