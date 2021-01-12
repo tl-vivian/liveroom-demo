@@ -2,20 +2,16 @@ import React from "react";
 import styled ,{keyframes}from 'styled-components';
 
 const slidein = keyframes`
-0% {
-    left:-359px;
+  0% {
     width:0;
    }
    20% {
-    left:0px;
-   }
-   50%{
     width:calc(100% - 84px);
    }
- 
-   100% {
-   
+   100%{
+    width:calc(100% - 84px);
    }
+
 `;
 const marquee = keyframes`
 from {
@@ -35,9 +31,10 @@ const StyledMarquee = styled.div`
     color:var(--white);
     text-shadow:var(--text-shadow-for-white);
     position:absolute;
+    left:0px;
     display:flex;
     align-items:center;
-    padding:4px 8px;
+
     margin-left:8px;
     border-radius:4px;
     top:80px;

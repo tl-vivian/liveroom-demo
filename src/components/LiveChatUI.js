@@ -15,17 +15,21 @@ overflow:scroll;
 position: absolute;
 scroll-snap-type:x mandatory;
 .ui-none{
-  background-color:red;
+  background-color:none;
 }
 .ui-ranking{
-  background-color:red;
+  background:linear-gradient(180deg, rgba(34,34,34,0.95) 27%, rgba(0,0,0,0.50) 100%);
 }
+::-webkit-scrollbar {
+  display: none;
+}
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 `;
 const PageContainer = styled.div`
 height:100%;
 width:300%;
 display:flex;
-// left:-${props=>props.position*100}%;
 `;
 const Page = styled.div`
   height: 100%;
@@ -161,11 +165,12 @@ class LiveChatUI extends React.Component {
       startY:0,
       dx:0,
       offset:{},
-      scrollLeft:0
+      scrollLeft:375
     };
   }
   componentDidMount(){
     let rect = this.pages.current.getBoundingClientRect();
+    this.pages.current.scrollLeft = this.state.scrollLeft
     this.setState({offset:{x:rect.x,y:rect.y}})
     // 目前這樣寫的話，再改了 phone type 的時候 offset 數字會不對
     // 應該要在修改 phone type 的時候更新這個數字
@@ -206,18 +211,23 @@ class LiveChatUI extends React.Component {
       const currentY = e.clientY-this.state.offset.y;
       const dx = currentX-this.state.startX;
       this.pages.current.scrollLeft = this.state.scrollLeft - dx;
-      console.log(this.state.currentX,this.state.currentY,dx)
+      console.log(currentX,currentY,dx)
     }
+    
+  }
+  handleChangePage=()=>{
+    const threshold = 100;
     
   }
   render() {
     return (
 
       <UIWrapper className="UI" ref={this.pages}>
-        {this.props.children}
+ 
         <PageContainer {...this.props}  onMouseDown={this.handleMouse} onMouseUp={this.handleMouse} onMouseMove={this.handleMouseMove}>
         <Page className="ui-none"></Page>
         <Page className="UI ui-main"  {...this.props}>
+        {this.props.children}
           <TopControls className="top-controls">
             <RoomInfo />
             <IconButton bgcolor="var(--black25)">
@@ -232,9 +242,6 @@ class LiveChatUI extends React.Component {
           </TopControls>
         <SecondControls className="second-controls"><RoomTopic/><BulletinButton/></SecondControls>
           <ClearZone />
-          <h1>{`mouse is down: ${this.state.isDown}`}</h1>
-          <h3>{`startX: ${this.state.startX}`}</h3>  <h3>{`startY: ${this.state.startY}`}</h3>
-          <h3>{`endX: ${this.state.endX}`}</h3>  <h3>{`endY: ${this.state.endY}`}</h3>
           <ChatroomWrapper>
             <Messages>
             {this.state.messages.map(function (msg,index) {

@@ -4,10 +4,10 @@ import styled ,{keyframes}from 'styled-components';
 
 const slide = keyframes`
 0% {
-  left:-359px;
+  transform:translateX(-100%);
  }
  20% {
-  left:0px;
+  transform:translateX(0%);
  }
  80% {
   opacity:1;
@@ -22,6 +22,7 @@ const slide = keyframes`
 const StyledWelcomeEffect = styled.div`
     position:absolute;
     top:60%;
+    left:0px;
     z-index:100;
     width:360px;
     height:32px;
@@ -30,7 +31,7 @@ const StyledWelcomeEffect = styled.div`
     padding-left:8px;
     animation: ${slide} 2.5s ease-in-out infinite ;
     background-image:${props=>levelEffectBgColor[props.level]};
-    
+
     :before{
       content:"";
       clip-path: polygon(0 0, 100% 0, 50% 100%, 0% 100%);
