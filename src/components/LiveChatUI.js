@@ -271,7 +271,14 @@ class LiveChatUI extends React.Component {
             </IconButton>
           </BottomControls>
         </Page>
-        <Page className="ui-ranking"></Page>
+        <Page className="ui-ranking">
+          <div className="tabs">
+            <div className="tab"></div>
+            <div className="tab"></div>
+            <div className="tab"></div>
+          </div>
+          
+        </Page>
         </PageContainer>
 
       </UIWrapper>
