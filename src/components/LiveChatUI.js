@@ -4,6 +4,8 @@ import ChatMsg from "./ChatMsg";
 import IconButton from "./IconButton";
 import RoomInfo from "./RoomInfo";
 import RoomTopic from "./RoomTopic";
+import Tab from "./Tab";
+import Tabs from "./Tabs";
 import BulletinButton from "./BulletinButton";
 import {UserIcon,ShareIcon,XIcon,ArrowIcon, ScreenshotIcon} from "../assets";
 import animatedGiftButton from "../assets/giftButton.webp";
@@ -272,11 +274,11 @@ class LiveChatUI extends React.Component {
           </BottomControls>
         </Page>
         <Page className="ui-ranking">
-          <div className="tabs">
-            <div className="tab"></div>
-            <div className="tab"></div>
-            <div className="tab"></div>
-          </div>
+              <Tabs>
+                <Tab>陪伴區</Tab>
+                <Tab>送禮榜</Tab>
+                <Tab active>收禮榜</Tab>
+              </Tabs>
           
         </Page>
         </PageContainer>
