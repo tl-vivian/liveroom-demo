@@ -276,10 +276,10 @@ class LiveChatUI extends React.Component {
         <Page className="ui-ranking">
               <Tabs>
                 <Tab>陪伴區</Tab>
-                <Tab>送禮榜</Tab>
-                <Tab active>收禮榜</Tab>
+                <Tab active>送禮榜</Tab>
+                <Tab >收禮榜</Tab>
               </Tabs>
-          
+        
         </Page>
         </PageContainer>
 

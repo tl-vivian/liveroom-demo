@@ -5,9 +5,6 @@ import styled from "styled-components";
 const TabsWrapper = styled.ul`
  display:flex;
  height:40px;
- .active{
-  outline:1px red solid;
-}
 `;
 
 
