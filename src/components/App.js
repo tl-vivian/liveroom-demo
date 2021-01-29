@@ -67,7 +67,6 @@ const TextGiftArea = styled.div`
 position:absolute;
   background-color:red;
   height:100px;
-  width:100px;
 `;
 
 
