@@ -5,7 +5,8 @@ import Streaming from "./Streaming";
 import ToggleButtons from "./ToggleButtons";
 import LiveChatUI from "./LiveChatUI";
 import WelcomeEffect from "./WelcomeEffect";
-import Marquee from "./Marquee"
+import Marquee from "./Marquee";
+import TextGift from "./TextGift";
 
 const StyledApp = styled.div`
 display: flex;
@@ -62,7 +63,12 @@ aside {
   }
 }
 `;
-
+const TextGiftArea = styled.div`
+position:absolute;
+  background-color:red;
+  height:100px;
+  width:100px;
+`;
 
 
 const phones = [
@@ -102,6 +108,9 @@ class App extends React.Component {
         show:false,
         duration:3,
         content:"跑馬燈~跑馬燈~跑馬燈~跑馬燈~跑馬燈~"
+      },
+      textGift:{
+        content:"彈幕～彈幕～彈幕～彈幕～彈幕～彈幕～"
       }
     };
   }
@@ -134,6 +143,9 @@ class App extends React.Component {
               <LiveChatUI type={phones[this.state.currentPhone].type}>
               {this.state.showWelcomeEffect&&<WelcomeEffect level="Diamond"/>}
               {this.state.marquee.show&&<Marquee duration={this.state.marquee.duration} content={this.state.marquee.content}/>}
+              <TextGiftArea>
+                <TextGift content={this.state.textGift.content}/>
+              </TextGiftArea>
               </LiveChatUI>
             </div>
           </div>
@@ -159,6 +171,14 @@ class App extends React.Component {
               <div className="option-input">
                 <label className="t-body2" htmlFor="marquee-content">內容</label>
                 <input id="marquee-content" type="text" value={this.state.marquee.content} onChange={this.handleMarqueeContent}/>
+              </div>
+            </details>
+            <details className="control-options text-gift-options" open>
+              <summary>彈幕</summary>
+              <div className="option-input">
+                <label className="t-body2" htmlFor="text-gift-content">內容</label>
+                <input id="text-gift-content" type="text" value={this.state.textGift.content} onChange={this.handleMarqueeDuration}/>
+                <input id="text-gift" type="button" onChange={()=>this.setState({showWelcomeEffect:!this.state.showWelcomeEffect})}/>
               </div>
             </details>
 
