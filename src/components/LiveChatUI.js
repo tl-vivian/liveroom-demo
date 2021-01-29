@@ -126,14 +126,7 @@ const BottomControls = styled.div`
     border: 1px solid var(--white50);
   }
 `;
-const AudienceList = styled.div`
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:start;
-  overflow-y:scroll;
-`;
+
 
 class LiveChatUI extends React.Component {
   constructor(props) {
