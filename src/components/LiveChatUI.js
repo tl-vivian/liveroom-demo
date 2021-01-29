@@ -231,7 +231,7 @@ class LiveChatUI extends React.Component {
         <PageContainer {...this.props}  onMouseDown={this.handleMouse} onMouseUp={this.handleMouse} onMouseMove={this.handleMouseMove}>
         <Page className="ui-none"></Page>
         <Page className="UI ui-main"  {...this.props}>
-        {this.props.children}
+
           <TopControls className="top-controls">
             <RoomInfo />
             <IconButton bgcolor="var(--black25)">
@@ -245,7 +245,7 @@ class LiveChatUI extends React.Component {
             </IconButton>
           </TopControls>
         <SecondControls className="second-controls"><RoomTopic/><BulletinButton/></SecondControls>
-          <ClearZone />
+          <ClearZone>{this.props.children}</ClearZone>
           <ChatroomWrapper>
             <Messages>
             {this.state.messages.map(function (msg,index) {

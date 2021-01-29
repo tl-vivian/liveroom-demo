@@ -32,12 +32,11 @@ const StyledMarquee = styled.div`
     text-shadow:var(--text-shadow-for-white);
     position:absolute;
     left:0px;
+    top:-34px;
     display:flex;
     align-items:center;
-
-    margin-left:8px;
     border-radius:4px;
-    top:80px;
+  
     z-index:20;
     overflow:hidden;
     transform-origin:top left;
