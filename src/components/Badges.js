@@ -34,14 +34,14 @@ export const LevelBadge = (props) => {
 
   if(props.type==="chat"){
     return (
-      <StyledLevelBadge >
+      <StyledLevelBadge className="level-badge">
         <img src={levelBadgeChatroom[props.level]}/>
         <StyledLevelNumber {...props}>{props.levelNumber}</StyledLevelNumber>
       </StyledLevelBadge>
     );
   }else{
     return (
-      <StyledLevelBadge>
+      <StyledLevelBadge className="level-badge">
         <img src={levelBadge[props.level]}/>
         <StyledLevelNumber>{props.levelNumber}</StyledLevelNumber>
       </StyledLevelBadge>

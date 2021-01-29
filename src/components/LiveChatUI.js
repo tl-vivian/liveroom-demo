@@ -6,6 +6,7 @@ import RoomInfo from "./RoomInfo";
 import RoomTopic from "./RoomTopic";
 import Tab from "./Tab";
 import Tabs from "./Tabs";
+import Audience from "./Audience";
 import BulletinButton from "./BulletinButton";
 import {UserIcon,ShareIcon,XIcon,ArrowIcon, ScreenshotIcon} from "../assets";
 import animatedGiftButton from "../assets/giftButton.webp";
@@ -124,6 +125,14 @@ const BottomControls = styled.div`
     background-color: var(--white25);
     border: 1px solid var(--white50);
   }
+`;
+const AudienceList = styled.div`
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:start;
+  overflow-y:scroll;
 `;
 
 class LiveChatUI extends React.Component {
@@ -275,11 +284,11 @@ class LiveChatUI extends React.Component {
         </Page>
         <Page className="ui-ranking">
               <Tabs>
-                <Tab>陪伴區</Tab>
-                <Tab active>送禮榜</Tab>
+                <Tab active>陪伴區</Tab>
+                <Tab>送禮榜</Tab>
                 <Tab >收禮榜</Tab>
               </Tabs>
-        
+    <Audience/>
         </Page>
         </PageContainer>
 
