@@ -64,9 +64,10 @@ aside {
 }
 `;
 const TextGiftArea = styled.div`
-position:absolute;
-  background-color:red;
+
+  border:1px red solid;
   height:100px;
+  width:200%;
 `;
 
 
@@ -142,8 +143,9 @@ class App extends React.Component {
               <LiveChatUI type={phones[this.state.currentPhone].type}>
               {this.state.showWelcomeEffect&&<WelcomeEffect level="Diamond"/>}
               {this.state.marquee.show&&<Marquee duration={this.state.marquee.duration} content={this.state.marquee.content}/>}
-              <TextGiftArea>
+              <TextGiftArea className="text-gift-area">
                 <TextGift content={this.state.textGift.content}/>
+                
               </TextGiftArea>
               </LiveChatUI>
             </div>
