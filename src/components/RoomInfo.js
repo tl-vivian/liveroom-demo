@@ -2,11 +2,14 @@ import React from 'react';
 import styled ,{keyframes}from "styled-components";
 import Avatar from './Avatar';
 import IconButton from './IconButton';
-import {FireIcon,HeartPlusIcon} from '../assets';
+import {FireIcon,StarIcon,DiamondIcon} from '../assets';
 import AvatarImage from "../assets/img2.png";
 
 
 const RoomInfoWrapper = styled.div`
+  // *{
+  //   outline:1px solid red;
+  // }
   position:absolute;
   top:0;
   left:0;
@@ -25,16 +28,8 @@ const RoomInfoWrapper = styled.div`
     margin-left:8px;
     gap:4px;
   }
-  .host-live-data {
-    display: flex;
-    align-items: center;
 
-  }
-  
-  .host-live-data svg.feather {
-    height: 12px;
-    width: 12px;
-  }
+
   .icon-button{
     background-color:transparent;
   }
@@ -50,6 +45,32 @@ to {
           transform: translateX(-100%);
 }
 `;
+
+const flip = keyframes`
+0% {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+10% {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+50%{
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+60%{
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
+}
+
+100%
+{
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
+}
+`;
+
 const HostnameMarquee = styled.span`
 display : flex;
 flex-shrink: 0;
@@ -62,6 +83,16 @@ align-items: center;
   min-width:100px;
 }
 `;
+const HostLiveDataWrapper = styled.div`
+  height:16px;
+  overflow-y:hidden;
+  .host-live-data {
+    display: flex;
+    align-items: center;
+    animation: ${flip} 6s linear infinite;
+  }
+
+`
 
 export default function RoomInfo(){
 return(
@@ -72,11 +103,20 @@ return(
       <p className="host-nickname t-caption">Host Nickname</p>
       <p className="host-nickname t-caption">Host Nickname</p>
       </HostnameMarquee>
-      <span className="host-live-data t-caption">
-        <FireIcon/> 123456
+      <HostLiveDataWrapper>
+      <span className="host-live-data live-popularity t-caption">
+        <FireIcon/> 222,222
       </span>
+      <span className="host-live-data live-income t-caption">
+        <DiamondIcon/> 111,111
+      </span>
+      <span className="host-live-data live-popularity t-caption">
+        <FireIcon/> 222,222
+      </span>
+      </HostLiveDataWrapper>
+
     </div>
-    <IconButton bgcolor="transparent" color="#fd856d"><HeartPlusIcon/></IconButton>
+    <IconButton bgcolor="transparent" color="#eeeeee"><StarIcon/></IconButton>
   </RoomInfoWrapper>
 )
 }

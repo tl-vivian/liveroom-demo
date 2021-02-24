@@ -142,9 +142,9 @@ class App extends React.Component {
               <LiveChatUI type={phones[this.state.currentPhone].type}>
               {this.state.showWelcomeEffect&&<WelcomeEffect level="Diamond"/>}
               {this.state.marquee.show&&<Marquee duration={this.state.marquee.duration} content={this.state.marquee.content}/>}
-              <TextGiftArea>
+              {/* <TextGiftArea>
                 <TextGift content={this.state.textGift.content}/>
-              </TextGiftArea>
+              </TextGiftArea> */}
               </LiveChatUI>
             </div>
           </div>
