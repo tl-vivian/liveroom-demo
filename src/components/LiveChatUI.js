@@ -47,7 +47,7 @@ const Page = styled.div`
   flex-direction: column;
   justify-content: space-between;
   scroll-snap-align:center;
-
+  // overflow-x:hidden;
 `;
 const TopControls = styled.div`
 height:48px;
@@ -245,7 +245,7 @@ class LiveChatUI extends React.Component {
             </IconButton>
           </TopControls>
         <SecondControls className="second-controls"><RoomTopic/><BulletinButton/></SecondControls>
-          <ClearZone>{this.props.children}</ClearZone>
+          <ClearZone className="clear-zone">{this.props.children}</ClearZone>
           <ChatroomWrapper>
             <Messages>
             {this.state.messages.map(function (msg,index) {
@@ -275,13 +275,15 @@ class LiveChatUI extends React.Component {
             </IconButton>
           </BottomControls>
         </Page>
-        <Page className="ui-ranking">
+        <Page className="">
+              {/* 
+              ui-ranking
               <Tabs>
                 <Tab active>陪伴區</Tab>
                 <Tab>送禮榜</Tab>
                 <Tab >收禮榜</Tab>
               </Tabs>
-    <Audience/>
+        <Audience/> */}
         </Page>
         </PageContainer>
 
