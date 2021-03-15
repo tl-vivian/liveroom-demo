@@ -6,7 +6,7 @@ import ToggleButtons from "./ToggleButtons";
 import LiveChatUI from "./LiveChatUI";
 import WelcomeEffect from "./WelcomeEffect";
 import Marquee from "./Marquee";
-import TextGift from "./TextGift";
+import BulletText from "./BulletText";
 
 const StyledApp = styled.div`
 display: flex;
@@ -63,13 +63,13 @@ aside {
   }
 }
 `;
-const TextGiftArea = styled.div`
-
-  border:1px red solid;
-  height:100px;
+const BulletTextArea = styled.div`
+  position:absolute;
+  bottom:32px;
+  left:-16px;
+  height:56px;
   width:200%;
 `;
-
 
 const phones = [
   {
@@ -109,8 +109,21 @@ class App extends React.Component {
         duration:3,
         content:"跑馬燈~跑馬燈~跑馬燈~跑馬燈~跑馬燈~"
       },
-      textGift:{
+      bulletText:{
+        show:true,
         content:"彈幕～彈幕～彈幕～彈幕～彈幕～彈幕～"
+      },
+      ultimateMarquee:{
+        show:true,
+      },
+      gift:{
+        show:true,
+      },
+      comboGift:{
+        show:true,
+      },
+      npc:{
+        show:true,
       }
     };
   }
@@ -121,10 +134,13 @@ class App extends React.Component {
 
   handleMarqueeDuration = (event)=>{
   this.setState({marquee:{...this.state.marquee, duration:event.target.value}});
- }
- handleMarqueeContent = (event)=>{
+  }
+  handleMarqueeContent = (event)=>{
   this.setState({marquee:{...this.state.marquee, content:event.target.value}});
- }
+  }
+  handleBulletTextContent=(event)=>{
+    this.setState({bulletText:{...this.state.bulletText,content:event.target.value}})
+  }
 
   render() {
     return (
@@ -143,11 +159,9 @@ class App extends React.Component {
               <LiveChatUI type={phones[this.state.currentPhone].type}>
               {this.state.showWelcomeEffect&&<WelcomeEffect level="Diamond"/>}
               {this.state.marquee.show&&<Marquee duration={this.state.marquee.duration} content={this.state.marquee.content}/>}
-
-              <TextGiftArea className="text-gift-area">
-                <TextGift content={this.state.textGift.content}/>                
-              </TextGiftArea>
-
+              <BulletTextArea className="bullet-text-area">
+              {this.state.bulletText.show&&<BulletText content={this.state.bulletText.content}/>}           
+              </BulletTextArea>
               </LiveChatUI>
             </div>
           </div>
@@ -175,13 +189,16 @@ class App extends React.Component {
                 <input id="marquee-content" type="text" value={this.state.marquee.content} onChange={this.handleMarqueeContent}/>
               </div>
             </details>
-            <details className="control-options text-gift-options" open>
-              <summary>彈幕</summary>
+            <details className="control-options bullet-text-options" open>
+              <summary>彈幕<input id="bullet-text-effect" type="checkbox" onChange={()=>this.setState({bulletText:{...this.state.bulletText,show:!this.state.bulletText.show}})}/></summary>
               <div className="option-input">
-                <label className="t-body2" htmlFor="text-gift-content">內容</label>
-                <input id="text-gift-content" type="text" value={this.state.textGift.content} onChange={this.handleMarqueeDuration}/>
-                <input id="text-gift" type="button" onChange={()=>this.setState({showWelcomeEffect:!this.state.showWelcomeEffect})}/>
+                <label className="t-body2" htmlFor="bullet-text-content">內容</label>
+                <input id="bullet-text-content" type="text" value={this.state.bulletText.content} onChange={this.handleBulletTextContent}/>
+                <input id="bullet-text" type="button" onChange={()=>this.setState({showWelcomeEffect:!this.state.showWelcomeEffect})}/>
               </div>
+            </details>
+            <details className="control-options ultimate-marquee-options" open>
+              <summary>全域跑馬燈<input id="ultimate-marquee-effect" type="checkbox" onChange={()=>this.setState({ultimateMarquee:{...this.state.ultimateMarquee,show:!this.state.ultimateMarquee.show}})}/></summary>
             </details>
 
         </aside>

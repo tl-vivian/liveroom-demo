@@ -10,7 +10,7 @@ const movein = keyframes`
   transform:translateX(-200%);
  }
 `;
-const TextGiftWrapper = styled.div`
+const BulletTextWrapper = styled.div`
     position:absolute;
     height:48px;
     display:inline-flex;
@@ -30,17 +30,17 @@ const TextGiftWrapper = styled.div`
     animation: ${movein} 5s linear infinite;
 `;
 
-const TextGiftNickname = styled.p`
+const BulletTextNickname = styled.p`
 
 `;
-const TextGiftContent = styled.p`
+const BulletTextContent = styled.p`
 `;
-export default function TextGift(props){
+export default function BulletText(props){
 return(
-  <TextGiftWrapper className="text-gift">
+  <BulletTextWrapper className="bullet-text">
       <Avatar size={32} imgsrc="https://i.pravatar.cc/50"/>
-      <TextGiftNickname className="nickname tl-title3">Nickname:</TextGiftNickname>
-      <TextGiftContent className="content tl-caption">{props.content}</TextGiftContent>
-  </TextGiftWrapper>
+      <BulletTextNickname className="nickname tl-title3">Nickname:</BulletTextNickname>
+      <BulletTextContent className="content tl-caption">{props.content}</BulletTextContent>
+  </BulletTextWrapper>
 )
 }
