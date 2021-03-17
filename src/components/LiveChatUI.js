@@ -66,6 +66,7 @@ align-items:center;
 `;
 const ClearZone = styled.div`
 flex: 1;
+width:100%;
 `;
 const ChatroomWrapper = styled.div`
   width: calc(100% - 112px);
@@ -275,15 +276,14 @@ class LiveChatUI extends React.Component {
             </IconButton>
           </BottomControls>
         </Page>
-        <Page className="">
-              {/* 
-              ui-ranking
+        <Page className="ui-ranking">
+ 
               <Tabs>
                 <Tab active>陪伴區</Tab>
                 <Tab>送禮榜</Tab>
                 <Tab >收禮榜</Tab>
               </Tabs>
-        <Audience/> */}
+        <Audience/> 
         </Page>
         </PageContainer>
 

@@ -67,8 +67,8 @@ const BulletTextArea = styled.div`
   position:absolute;
   bottom:32px;
   left:-16px;
+  right:-16px;
   height:56px;
-  width:200%;
 `;
 
 const phones = [
@@ -111,7 +111,7 @@ class App extends React.Component {
       },
       bulletText:{
         show:true,
-        content:"彈幕～彈幕～彈幕～彈幕～彈幕～彈幕～"
+        content:"彈幕～彈幕～彈幕～"
       },
       ultimateMarquee:{
         show:true,

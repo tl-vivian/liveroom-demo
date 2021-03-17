@@ -4,15 +4,16 @@ import Avatar from './Avatar';
 
 const movein = keyframes`
 0% {
-  transform:translateX(0);
+  transform:translateX(100%);
  }
  100% {
-  transform:translateX(-200%);
+  transform:translateX(-100%);
  }
 `;
 const BulletTextWrapper = styled.div`
     position:absolute;
     height:48px;
+    right:0px;
     display:inline-flex;
     align-items: center;
     justify-content:flex-start;
@@ -21,13 +22,13 @@ const BulletTextWrapper = styled.div`
     border-radius: 24px 0px 0px 24px;
     color:var(--white);
     text-shadow:var(--text-shadow-for-white);
-
+    transform:translateX(100%);
     >*{
       margin:4px;
     }
 
-    right:0;
-    animation: ${movein} 5s linear infinite;
+   
+    animation: ${movein} 6s linear infinite;
 `;
 
 const BulletTextNickname = styled.p`
