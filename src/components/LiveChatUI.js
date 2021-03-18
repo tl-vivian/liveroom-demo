@@ -25,6 +25,7 @@ scroll-snap-type:x mandatory;
 }
 ::-webkit-scrollbar {
   display: none;
+  width:0;
 }
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */

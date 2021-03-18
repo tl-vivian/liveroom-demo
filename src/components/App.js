@@ -108,7 +108,7 @@ class App extends React.Component {
       showWelcomeEffect:false,
       marquee:{
         show:true,
-        duration:3,
+        duration:5,
         content:"恭喜婕兒達成 20 萬熱度，一起歡呼吧～"
       },
       bulletText:{

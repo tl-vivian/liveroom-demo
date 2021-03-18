@@ -6,10 +6,10 @@ const slidein = keyframes`
   0% {
     transform: translateX(-100%);
   }
-  10% {
+  6% {
     transform: translateX(0);
   }
-  50%{
+  54%{
     transform: translateX(0);
   }
   60% {
@@ -23,13 +23,13 @@ const marquee = keyframes`
 0% {
   transform: translateX(0);
 }
-20% {
+16% {
   transform: translateX(0);
 }
 40%{
   transform: translateX(calc(232px - 100%));
 }
-50% {
+54% {
   transform: translateX(calc(232px - 100%));
 }
 100%{
@@ -46,7 +46,7 @@ const StyledMarquee = styled.div`
     left:-16px;
     top:-34px;
     z-index:20;
-    animation:${slidein} 10s ease-in-out infinite ;
+    animation:${slidein} ${props=>props.duration*2}s ease-in-out infinite ;
     .marquee-content{
       position:absolute;
       top:2px;
@@ -56,10 +56,9 @@ const StyledMarquee = styled.div`
       overflow:hidden;
         span{
             flex-shrink:0;
-            animation: ${marquee} 10s linear infinite;
+            animation: ${marquee} ${props=>props.duration*2}s linear infinite;
         }
     }
-
     .animation-celebrate{
       height:40px;
       width:40px;
