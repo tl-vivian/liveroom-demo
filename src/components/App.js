@@ -116,7 +116,7 @@ class App extends React.Component {
         content:"彈幕～彈幕～彈幕～"
       },
       publicMarquee:{
-        show:true,
+        show:false,
       },
       gift:{
         show:true,
@@ -159,7 +159,7 @@ class App extends React.Component {
            
               <Streaming />
               <LiveChatUI type={phones[this.state.currentPhone].type}>
-              <PublicMarquee/>
+              {this.state.publicMarquee.show&&<PublicMarquee/>}
               {this.state.showWelcomeEffect&&<WelcomeEffect level="Diamond"/>}
               {this.state.marquee.show&&<Marquee duration={this.state.marquee.duration} content={this.state.marquee.content}/>}
               <BulletTextArea className="bullet-text-area">

@@ -3,30 +3,64 @@ import {marqueeImg} from '../assets';
 import styled ,{keyframes}from 'styled-components';
 
 const marquee = keyframes`
-from {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
-to {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-}
+    0%{
+        transform: translateX(0);
+    }
+    10% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    }
+    40% {
+    -webkit-transform: translateX(calc(242px - 100%));
+            transform: translateX(calc(242px - 100%));
+    }
+    50%{
+        transform: translateX(calc(242px - 100%));
+    }
+    100%{
+        transform: translateX(calc(242px - 100%));
+    }
+
 `;
 
 const expand = keyframes`
-    from{
+
+    0%{
         transform: scaleX(0);
         opacity:0;
     }
-    20%{
+    5% {
         transform: scaleX(1);
         opacity:0;
     }
-    25%{
+    10% {
+        opacity:1;
+        transform: scaleX(1)
+    }
+    
+    100%{
+        opacity:1;
+        transform: scaleX(1)
+    }
+`;
+const appear = keyframes`
+    0%{
+        transform: translate(-50%,-150%) scale(0);
+    }
+    5% {
+        transform:translate(-50%,-150%) scale(1);
+    }
+    48% {
+        transform: translate(-50%,-150%) scale(1);
         opacity:1;
     }
-    to{
-        transform: scaleX(1)
+    50%{
+        transform: translate(-50%,-150%) scale(0);
+        opacity:0;
+    }
+    100%{
+        transform: translate(-50%,-150%) scale(0);
+        opacity:0;
     }
 `;
 
@@ -36,10 +70,10 @@ const StyledPublicMarquee = styled.div`
     position:absolute;
     left:50%;
     transform:translate(-50%,-150%);
+    animation:${appear} 20s ease-out infinite;
     .marquee-content{
         width:242px;
         color:var(--white);
-
         text-shadow:var(--text-shadow-for-white);
         display:flex;
         position:absolute;
@@ -48,11 +82,11 @@ const StyledPublicMarquee = styled.div`
         left:59px;
         right:59px;
         overflow:hidden;
-        animation:${expand} 4.8s ease-out;
+        animation:${expand} 20s ease-out;
         display:flex;
         span{
             flex-shrink:0;
-            animation: ${marquee} 10s 2s linear;
+            animation: ${marquee} 20s linear infinite;
         }
     }
 `;
