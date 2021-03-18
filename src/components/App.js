@@ -6,7 +6,9 @@ import ToggleButtons from "./ToggleButtons";
 import LiveChatUI from "./LiveChatUI";
 import WelcomeEffect from "./WelcomeEffect";
 import Marquee from "./Marquee";
+import PublicMarquee from "./PublicMarquee";
 import BulletText from "./BulletText";
+
 
 const StyledApp = styled.div`
 display: flex;
@@ -110,10 +112,10 @@ class App extends React.Component {
         content:"跑馬燈~跑馬燈~跑馬燈~跑馬燈~跑馬燈~"
       },
       bulletText:{
-        show:true,
+        show:false,
         content:"彈幕～彈幕～彈幕～"
       },
-      ultimateMarquee:{
+      publicMarquee:{
         show:true,
       },
       gift:{
@@ -157,6 +159,7 @@ class App extends React.Component {
            
               <Streaming />
               <LiveChatUI type={phones[this.state.currentPhone].type}>
+              <PublicMarquee/>
               {this.state.showWelcomeEffect&&<WelcomeEffect level="Diamond"/>}
               {this.state.marquee.show&&<Marquee duration={this.state.marquee.duration} content={this.state.marquee.content}/>}
               <BulletTextArea className="bullet-text-area">
@@ -197,8 +200,8 @@ class App extends React.Component {
                 <input id="bullet-text" type="button" onChange={()=>this.setState({showWelcomeEffect:!this.state.showWelcomeEffect})}/>
               </div>
             </details>
-            <details className="control-options ultimate-marquee-options" open>
-              <summary>全域跑馬燈<input id="ultimate-marquee-effect" type="checkbox" onChange={()=>this.setState({ultimateMarquee:{...this.state.ultimateMarquee,show:!this.state.ultimateMarquee.show}})}/></summary>
+            <details className="control-options public-marquee-options" open>
+              <summary>全域跑馬燈<input id="public-marquee-effect" type="checkbox" onChange={()=>this.setState({publicMarquee:{...this.state.publicMarquee,show:!this.state.publicMarquee.show}})}/></summary>
             </details>
 
         </aside>

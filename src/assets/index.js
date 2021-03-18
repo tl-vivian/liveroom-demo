@@ -10,6 +10,9 @@ import Gold from "./badge-levelGold-36x20.png";
 import Diamond from "./badge-levelDiamond-36x20.png";
 import DarkGold from "./badge-levelDarkGold-36x20.png";
 
+//Marquees
+import PublicMarqueeBg from "./gold-marquee.png";
+
 //Icons
 
 export * from "./icons/ArrowIcon";
@@ -24,6 +27,8 @@ export * from "./icons/UserIcon";
 export * from "./icons/ShareIcon";
 export * from "./icons/StarIcon";
 export * from "./icons/BulletinIcon";
+
+
 
 // import Bulletin from './Icons/icon-bulletin.svg';
 // import Sofa from './Icons/icon-sofa.svg';
@@ -50,3 +55,7 @@ export const levelBadge = {
   Diamond: Diamond,
   DarkGold: DarkGold,
 };
+
+export const marqueeImg = {
+  public:PublicMarqueeBg
+}
