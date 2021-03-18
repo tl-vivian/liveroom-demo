@@ -23,24 +23,21 @@ const marquee = keyframes`
 
 `;
 
-const expand = keyframes`
+const showText = keyframes`
 
     0%{
-        transform: scaleX(0);
         opacity:0;
     }
     5% {
-        transform: scaleX(1);
+        
         opacity:0;
     }
     10% {
         opacity:1;
-        transform: scaleX(1)
+       
     }
-    
     100%{
         opacity:1;
-        transform: scaleX(1)
     }
 `;
 const appear = keyframes`
@@ -70,7 +67,7 @@ const StyledPublicMarquee = styled.div`
     position:absolute;
     left:50%;
     transform:translate(-50%,-150%);
-    animation:${appear} 20s ease-out infinite;
+    animation:${appear} ${props=>props.duration*2}s ease-out infinite;
     .marquee-content{
         width:242px;
         color:var(--white);
@@ -82,11 +79,11 @@ const StyledPublicMarquee = styled.div`
         left:59px;
         right:59px;
         overflow:hidden;
-        animation:${expand} 20s ease-out;
+        animation:${showText} ${props=>props.duration*2}s ease-out;
         display:flex;
         span{
             flex-shrink:0;
-            animation: ${marquee} 20s linear infinite;
+            animation: ${marquee} ${props=>props.duration*2}s linear infinite;
         }
     }
 `;

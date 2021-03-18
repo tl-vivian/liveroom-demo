@@ -12,6 +12,9 @@ import DarkGold from "./badge-levelDarkGold-36x20.png";
 
 //Marquees
 import PublicMarqueeBg from "./gold-marquee.png";
+import AchievementMarqueeBg from "./liveroom-marquee-achievement.svg";
+import RankingMarqueeBg from "./liveroom-marquee-ranking.svg";
+import Celebration from "./animation_celebrate.png";
 
 //Icons
 
@@ -57,5 +60,8 @@ export const levelBadge = {
 };
 
 export const marqueeImg = {
-  public:PublicMarqueeBg
+  public:PublicMarqueeBg,
+  ranking:RankingMarqueeBg,
+  achievement:AchievementMarqueeBg,
+  achievementCelebrate:Celebration,
 }

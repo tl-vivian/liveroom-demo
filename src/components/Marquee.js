@@ -1,52 +1,72 @@
 import React from "react";
+import {marqueeImg} from "../assets";
 import styled ,{keyframes}from 'styled-components';
 
 const slidein = keyframes`
   0% {
-    width:0;
-   }
-   20% {
-    width:calc(100% - 84px);
-   }
-   100%{
-    width:calc(100% - 84px);
-   }
-
+    transform: translateX(-100%);
+  }
+  10% {
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
 `;
 const marquee = keyframes`
-from {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+0% {
+  transform: translateX(0);
 }
-to {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+20% {
+  transform: translateX(0);
+}
+40%{
+  transform: translateX(calc(232px - 100%));
+}
+50% {
+  transform: translateX(calc(232px - 100%));
+}
+100%{
+  transform: translateX(calc(232px - 100%));
 }
 `;
 
 const StyledMarquee = styled.div`
     height:28px;
-    width:calc(100% - 84px);
-    background-color:var(--yellow);
+    width:284px;
     color:var(--white);
     text-shadow:var(--text-shadow-for-white);
     position:absolute;
-    left:0px;
+    left:-16px;
     top:-34px;
-    display:flex;
-    align-items:center;
-    border-radius:4px;
-  
     z-index:20;
-    overflow:hidden;
-    transform-origin:top left;
-    animation:${slidein} ${props=>props.duration}s ease-in-out infinite alternate;
+    animation:${slidein} 10s ease-in-out infinite ;
     .marquee-content{
-        display:flex;
+      position:absolute;
+      top:2px;
+      left:44px;
+      right:8px;
+      display:flex;
+      overflow:hidden;
         span{
             flex-shrink:0;
-            animation: ${marquee} 20s linear infinite;
+            animation: ${marquee} 10s linear infinite;
         }
+    }
+
+    .animation-celebrate{
+      height:40px;
+      width:40px;
+      position:absolute;
+      top:-6px;
+      left:4px;
+      z-index:30;
     }
 `;
 
@@ -55,8 +75,9 @@ export default function Marquee(props) {
   
   return (
     <StyledMarquee className="marquee" {...props}>
+      <img className="animation-celebrate" src={marqueeImg.achievementCelebrate}/>
+      <img src={marqueeImg.achievement}/>
       <span className="marquee-content">
-          <span>{props.content}</span>
           <span>{props.content}</span>
       </span>
     </StyledMarquee>
