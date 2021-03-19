@@ -30,18 +30,34 @@ const BulletTextWrapper = styled.div`
    
     animation: ${movein} 6s linear infinite;
 `;
-
 const BulletTextNickname = styled.p`
 
 `;
 const BulletTextContent = styled.p`
 `;
-export default function BulletText(props){
-return(
-  <BulletTextWrapper className="bullet-text">
-      <Avatar size={32} imgsrc="https://i.pravatar.cc/50"/>
-      <BulletTextNickname className="nickname tl-title3">Nickname:</BulletTextNickname>
-      <BulletTextContent className="content tl-caption">{props.content}</BulletTextContent>
-  </BulletTextWrapper>
-)
+
+class BulletText extends React.Component {
+  constructor(props) {
+    super(props);
+ 
+  }
+  componentDidMount(){
+    this.passWidthNumber();
+  }
+  passWidthNumber=()=>{
+    console.log(this.container.offsetWidth);
+    return this.container.offsetWidth;
+  }
+  render() {
+    return(
+      <BulletTextWrapper ref={el => (this.container = el)} className="bullet-text">
+          <Avatar size={32} imgsrc="https://i.pravatar.cc/50"/>
+          <BulletTextNickname className="nickname tl-title3">Nickname:</BulletTextNickname>
+          <BulletTextContent className="content tl-caption">{this.props.content}</BulletTextContent>
+        
+      </BulletTextWrapper>
+    )
+  }
 }
+
+export default BulletText;

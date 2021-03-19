@@ -108,29 +108,31 @@ class App extends React.Component {
     this.state = {
       currentPhone: 0,
       welcomeEffect:{
-        show:true,
+        show:false,
       },
       marquee:{
-        show:true,
+        show:false,
         duration:5,
         content:"恭喜婕兒達成 20 萬熱度，一起歡呼吧～"
       },
       bulletText:{
         show:true,
-        content:"彈幕～彈幕～彈幕～"
+        content:"",
+        inputContent:"",
+        queue:null,
       },
       publicMarquee:{
-        show:true,
+        show:false,
         duration:10,
       },
       gift:{
-        show:true,
+        show:false,
       },
       comboGift:{
-        show:true,
+        show:false,
       },
       npc:{
-        show:true,
+        show:false,
       }
     };
   }
@@ -149,7 +151,17 @@ class App extends React.Component {
   this.setState({marquee:{...this.state.marquee, content:event.target.value}});
   }
   handleBulletTextContent=(event)=>{
-    this.setState({bulletText:{...this.state.bulletText,content:event.target.value}})
+    this.setState({bulletText:{...this.state.bulletText,inputContent:event.target.value}})
+  }
+  handleBulletSubmit=(event)=>{
+    event.preventDefault();
+    const {bulletText} = this.state;
+    const bullet = this.createBulletText(bulletText.inputContent)
+    this.setState({bulletText:{...bulletText,content:bulletText.inputContent,inputContent:"",queue:bullet}})
+  }
+
+  createBulletText=(bulletContent)=>{
+    return <BulletText content={bulletContent}/>
   }
 
   render() {
@@ -172,7 +184,7 @@ class App extends React.Component {
               {welcomeEffect.show&&<WelcomeEffect level="Diamond"/>}
               {marquee.show&&<Marquee duration={marquee.duration} content={marquee.content}/>}
               <BulletTextArea className="bullet-text-area">
-              {bulletText.show&&<BulletText content={bulletText.content}/>}           
+              {bulletText.show&&bulletText.queue}           
               </BulletTextArea>
               </LiveChatUI>
             </div>
@@ -213,20 +225,7 @@ class App extends React.Component {
                 <input id="marquee-content" type="text" value={marquee.content} onChange={this.handleMarqueeContent}/>
               </div>
             </details>
-            <details className="control-options bullet-text-options" open>
-              <summary>彈幕
-                <input id="bullet-text-effect" 
-                        type="checkbox" 
-                        checked={bulletText.show}
-                        onChange={()=>this.setState({bulletText:{...bulletText,show:!bulletText.show}})}
-                />
-              </summary>
-              <div className="option-input">
-                <label className="t-body2" htmlFor="bullet-text-content">內容</label>
-                <input id="bullet-text-content" type="text" value={bulletText.content} onChange={this.handleBulletTextContent}/>
-                <input id="bullet-text" type="button" onChange={()=>this.setState({welcomeEffect:!welcomeEffect})}/>
-              </div>
-            </details>
+            
             <details className="control-options public-marquee-options" open>
               <summary>全域跑馬燈
                 <input id="public-marquee-effect" 
@@ -239,6 +238,23 @@ class App extends React.Component {
               <input id="public-marquee-duration" type="text" value={publicMarquee.duration} onChange={this.handlePublicMarqueeDuration}/>
               </div>
               
+            </details>
+
+            <details className="control-options bullet-text-options" open>
+              <summary>彈幕
+                <input id="bullet-text-effect" 
+                        type="checkbox" 
+                        checked={bulletText.show}
+                        onChange={()=>this.setState({bulletText:{...bulletText,show:!bulletText.show}})}
+                />
+              </summary>
+              <div className="option-input">
+                <form onSubmit={this.handleBulletSubmit}>
+                  <label className="t-body2" htmlFor="bullet-text-content">內容</label>
+                  <input id="bullet-text-content" type="text" value={bulletText.inputContent} onChange={this.handleBulletTextContent}/>
+                  <input type="submit" value="Submit"/>
+                </form>
+              </div>
             </details>
 
         </aside>
