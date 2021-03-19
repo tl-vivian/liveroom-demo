@@ -100,12 +100,16 @@ const phones = [
   },
 ];
 
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPhone: 0,
-      showWelcomeEffect:false,
+      welcomeEffect:{
+        show:true,
+      },
       marquee:{
         show:true,
         duration:5,
@@ -149,25 +153,26 @@ class App extends React.Component {
   }
 
   render() {
+    const {currentPhone,marquee,publicMarquee,welcomeEffect,bulletText} = this.state;
     return (
       <StyledApp>
         <main>
           <div
             className="phone"
             style={{
-              width: phones[this.state.currentPhone].width,
-              height: phones[this.state.currentPhone].height,
+              width: phones[currentPhone].width,
+              height: phones[currentPhone].height,
             }}
           >
             <div className="app">
            
               <Streaming />
-              <LiveChatUI type={phones[this.state.currentPhone].type}>
-              {this.state.publicMarquee.show&&<PublicMarquee duration={this.state.publicMarquee.duration}/>}
-              {this.state.showWelcomeEffect&&<WelcomeEffect level="Diamond"/>}
-              {this.state.marquee.show&&<Marquee duration={this.state.marquee.duration} content={this.state.marquee.content}/>}
+              <LiveChatUI type={phones[currentPhone].type}>
+              {publicMarquee.show&&<PublicMarquee duration={publicMarquee.duration}/>}
+              {welcomeEffect.show&&<WelcomeEffect level="Diamond"/>}
+              {marquee.show&&<Marquee duration={marquee.duration} content={marquee.content}/>}
               <BulletTextArea className="bullet-text-area">
-              {this.state.bulletText.show&&<BulletText content={this.state.bulletText.content}/>}           
+              {bulletText.show&&<BulletText content={bulletText.content}/>}           
               </BulletTextArea>
               </LiveChatUI>
             </div>
@@ -176,39 +181,62 @@ class App extends React.Component {
             name={"phone-sizes"}
             options={phones.map((phone) => phone.phoneName)}
             handlePhone={this.handlePhoneSize}
-            selected={this.state.currentPhone}
+            selected={currentPhone}
           />
         </main>
         <aside>
       
             <details className="control-options welcome-effect-options" open>
-              <summary>進場特效<input id="welcome-effect" type="checkbox" checked onChange={()=>this.setState({showWelcomeEffect:!this.state.showWelcomeEffect})}/></summary>
+              <summary>進場特效
+                <input id="welcome-effect" 
+                       type="checkbox" 
+                       checked={welcomeEffect.show}
+                       onChange={()=>this.setState({welcomeEffect:{...welcomeEffect,show:!welcomeEffect.show}})
+                       }/>
+              </summary>
             </details>
             <details className="control-options marquee-effect-options" open>
-              <summary>跑馬燈<input id="marquee-effect" type="checkbox" checked onChange={()=>this.setState({marquee:{...this.state.marquee,show:!this.state.marquee.show}})}/></summary>
+              <summary>跑馬燈
+                <input id="marquee-effect" 
+                        type="checkbox" 
+                        checked={marquee.show} 
+                        onChange={()=>this.setState({marquee:{...marquee,show:!marquee.show}})}
+                />
+              </summary>
     
               <div className="option-input">
                 <label className="t-body2" htmlFor="marquee-duration">長度(s)</label>
-                <input id="marquee-duration" type="text" value={this.state.marquee.duration} onChange={this.handleMarqueeDuration}/>
+                <input id="marquee-duration" type="text" value={marquee.duration} onChange={this.handleMarqueeDuration}/>
               </div>
               <div className="option-input">
                 <label className="t-body2" htmlFor="marquee-content">內容</label>
-                <input id="marquee-content" type="text" value={this.state.marquee.content} onChange={this.handleMarqueeContent}/>
+                <input id="marquee-content" type="text" value={marquee.content} onChange={this.handleMarqueeContent}/>
               </div>
             </details>
             <details className="control-options bullet-text-options" open>
-              <summary>彈幕<input id="bullet-text-effect" type="checkbox" checked onChange={()=>this.setState({bulletText:{...this.state.bulletText,show:!this.state.bulletText.show}})}/></summary>
+              <summary>彈幕
+                <input id="bullet-text-effect" 
+                        type="checkbox" 
+                        checked={bulletText.show}
+                        onChange={()=>this.setState({bulletText:{...bulletText,show:!bulletText.show}})}
+                />
+              </summary>
               <div className="option-input">
                 <label className="t-body2" htmlFor="bullet-text-content">內容</label>
-                <input id="bullet-text-content" type="text" value={this.state.bulletText.content} onChange={this.handleBulletTextContent}/>
-                <input id="bullet-text" type="button" onChange={()=>this.setState({showWelcomeEffect:!this.state.showWelcomeEffect})}/>
+                <input id="bullet-text-content" type="text" value={bulletText.content} onChange={this.handleBulletTextContent}/>
+                <input id="bullet-text" type="button" onChange={()=>this.setState({welcomeEffect:!welcomeEffect})}/>
               </div>
             </details>
             <details className="control-options public-marquee-options" open>
-              <summary>全域跑馬燈<input id="public-marquee-effect" type="checkbox" checked onChange={()=>this.setState({publicMarquee:{...this.state.publicMarquee,show:!this.state.publicMarquee.show}})}/></summary>
+              <summary>全域跑馬燈
+                <input id="public-marquee-effect" 
+                       type="checkbox" 
+                       checked ={publicMarquee.show}
+                       onChange={()=>this.setState({publicMarquee:{...publicMarquee,show:!publicMarquee.show}})}/>
+              </summary>
               <div className="option-input">
               <label className="t-body2" htmlFor="public-marquee-duration">長度(s)</label>
-              <input id="public-marquee-duration" type="text" value={this.state.publicMarquee.duration} onChange={this.handlePublicMarqueeDuration}/>
+              <input id="public-marquee-duration" type="text" value={publicMarquee.duration} onChange={this.handlePublicMarqueeDuration}/>
               </div>
               
             </details>
