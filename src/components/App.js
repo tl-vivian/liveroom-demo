@@ -8,6 +8,7 @@ import WelcomeEffect from "./WelcomeEffect";
 import Marquee from "./Marquee";
 import PublicMarquee from "./PublicMarquee";
 import BulletText from "./BulletText";
+import BulletTracks from "./BulletTracks";
 
 
 const StyledApp = styled.div`
@@ -65,29 +66,29 @@ aside {
   }
 }
 `;
-const BulletTextArea = styled.div`
-  position:absolute;
-  bottom:32px;
-  left:-16px;
-  right:-16px;
-  height:56px;
-`;
+// const BulletTextArea = styled.div`
+//   position:absolute;
+//   bottom:32px;
+//   left:-16px;
+//   right:-16px;
+//   height:56px;
+// `;
 
-const BulletTextArea2 = styled.div`
-  position:absolute;
-  bottom:calc(32px + 56px);
-  left:-16px;
-  right:-16px;
-  height:56px;
-`;
+// const BulletTextArea2 = styled.div`
+//   position:absolute;
+//   bottom:calc(32px + 56px);
+//   left:-16px;
+//   right:-16px;
+//   height:56px;
+// `;
 
-const BulletTextArea3 = styled.div`
-  position:absolute;
-  bottom:calc(32px + 56px * 2);
-  left:-16px;
-  right:-16px;
-  height:56px;
-`;
+// const BulletTextArea3 = styled.div`
+//   position:absolute;
+//   bottom:calc(32px + 56px * 2);
+//   left:-16px;
+//   right:-16px;
+//   height:56px;
+// `;
 
 
 const phones = [
@@ -137,6 +138,13 @@ class App extends React.Component {
         content: "",
         inputContent: "",
         queue: [],
+        track1: [],
+        track2: [],
+        track3: [],
+        track1Status: true,
+        track2Status: true,
+        track3Status: true,
+
       },
       publicMarquee: {
         show: false,
@@ -180,6 +188,24 @@ class App extends React.Component {
 
   }
 
+  checkTrackStatus = () => {
+    const { track1Status, track2Status, track3Status } = this.state.bulletText;
+    const trackStatus = [track1Status, track2Status, track3Status];
+    const isNotAvailable = (currentTrack) => currentTrack == false;
+    if (trackStatus.every(isNotAvailable)) {
+      console.log("no track is available")
+    } else {
+      const availableTracks = trackStatus.filter(currentTrack => currentTrack == true);
+      console.log(availableTracks)
+    }
+  }
+  timerChangeStatus = (order) => {
+    setTimeout(() => {
+      console.log(order);
+      const {bulletText}=this.state;
+      this.setState({bulletText:{...bulletText,[`track${order}Status`]:true}})
+    }, 1000)
+  }
   createBulletText = (bulletContent) => {
     return <BulletText content={bulletContent} key={new Date().getTime()} destroyBulletText={this.destroyBulletText} />
   }
@@ -211,15 +237,16 @@ class App extends React.Component {
                 {publicMarquee.show && <PublicMarquee duration={publicMarquee.duration} />}
                 {welcomeEffect.show && <WelcomeEffect level="Diamond" />}
                 {marquee.show && <Marquee duration={marquee.duration} content={marquee.content} />}
-                <BulletTextArea className="bullet-text-area">
-                  {bulletText.queue}
-                </BulletTextArea>
-                <BulletTextArea2 className="bullet-text-area">
-                  {bulletText.queue}
-                </BulletTextArea2>
-                <BulletTextArea3 className="bullet-text-area">
-                  {bulletText.queue}
-                </BulletTextArea3>
+                <BulletTracks order={1} status={bulletText.track1Status} onClick={() => {this.setState({ bulletText: { ...bulletText, track1Status: !bulletText.track1Status } });this.timerChangeStatus("1")}}>
+                  {bulletText.track1}
+                </BulletTracks>
+                <BulletTracks order={2} status={bulletText.track2Status} onClick={() => {this.setState({ bulletText: { ...bulletText, track2Status: !bulletText.track2Status } });this.timerChangeStatus("2")}}>
+                  {bulletText.track2}
+                </BulletTracks>
+                <BulletTracks order={3} status={bulletText.track3Status} onClick={() => {this.setState({ bulletText: { ...bulletText, track3Status: !bulletText.track3Status } });this.timerChangeStatus("3")}}>
+                  {bulletText.track3}
+                </BulletTracks>
+                {this.checkTrackStatus()}
               </LiveChatUI>
             </div>
           </div>
