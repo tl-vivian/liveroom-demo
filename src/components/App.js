@@ -7,7 +7,7 @@ import LiveChatUI from "./LiveChatUI";
 import WelcomeEffect from "./WelcomeEffect";
 import Marquee from "./Marquee";
 import PublicMarquee from "./PublicMarquee";
-import BulletText from "./BulletText";
+import BulletTracks from "./BulletTracks";
 
 
 const StyledApp = styled.div`
@@ -119,7 +119,6 @@ class App extends React.Component {
         show:true,
         content:"",
         inputContent:"",
-        queue:null,
       },
       publicMarquee:{
         show:false,
@@ -151,19 +150,14 @@ class App extends React.Component {
   this.setState({marquee:{...this.state.marquee, content:event.target.value}});
   }
   handleBulletTextContent=(event)=>{
+    
     this.setState({bulletText:{...this.state.bulletText,inputContent:event.target.value}})
   }
   handleBulletSubmit=(event)=>{
     event.preventDefault();
     const {bulletText} = this.state;
-    const bullet = this.createBulletText(bulletText.inputContent)
-    this.setState({bulletText:{...bulletText,content:bulletText.inputContent,inputContent:"",queue:bullet}})
+    this.setState({bulletText:{...bulletText,content:bulletText.inputContent,inputContent:""}})
   }
-
-  createBulletText=(bulletContent)=>{
-    return <BulletText content={bulletContent}/>
-  }
-
   render() {
     const {currentPhone,marquee,publicMarquee,welcomeEffect,bulletText} = this.state;
     return (
@@ -184,7 +178,7 @@ class App extends React.Component {
               {welcomeEffect.show&&<WelcomeEffect level="Diamond"/>}
               {marquee.show&&<Marquee duration={marquee.duration} content={marquee.content}/>}
               <BulletTextArea className="bullet-text-area">
-              {bulletText.show&&bulletText.queue}           
+              {bulletText.show&&<BulletTracks bulletText={this.state.bulletText.content} />}           
               </BulletTextArea>
               </LiveChatUI>
             </div>
