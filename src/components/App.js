@@ -66,29 +66,6 @@ aside {
   }
 }
 `;
-// const BulletTextArea = styled.div`
-//   position:absolute;
-//   bottom:32px;
-//   left:-16px;
-//   right:-16px;
-//   height:56px;
-// `;
-
-// const BulletTextArea2 = styled.div`
-//   position:absolute;
-//   bottom:calc(32px + 56px);
-//   left:-16px;
-//   right:-16px;
-//   height:56px;
-// `;
-
-// const BulletTextArea3 = styled.div`
-//   position:absolute;
-//   bottom:calc(32px + 56px * 2);
-//   left:-16px;
-//   right:-16px;
-//   height:56px;
-// `;
 
 
 const phones = [
@@ -181,35 +158,65 @@ class App extends React.Component {
   handleBulletSubmit = (event) => {
     event.preventDefault();
     const { bulletText } = this.state;
-
     console.log(this.state)
-    //this.state.bulletText.queue.append(bullet)
-   this.checkTrackStatus();
+    const targetTrack = this.checkTrackStatus();
+    const bullet = this.createBulletText(this.state.bulletText.inputContent,targetTrack)
+    if (!targetTrack) {
+          console.log("no track is available")
+          this.setState({ bulletText: { ...bulletText, content: bulletText.inputContent, inputContent: "", queue: [...bulletText.queue, bullet] } })
+        } else {
+          console.log("this bullet goes to",targetTrack)
+          this.setState({
+            bulletText:{
+              ...bulletText,
+              content: bulletText.inputContent, 
+              inputContent: "",
+              [`track${targetTrack}`]:[...bulletText[[`track${targetTrack}`]],bullet],
+              [`track${targetTrack}Status`]:false,
+            }
+          })
+          this.timerChangeStatus(targetTrack);
+        }
+      
   }
+
+  // checkTrackStatus = () => {
+  //   const {bulletText}=this.state;
+  //   const { track1Status, track2Status, track3Status } = this.state.bulletText;
+  //   const trackStatus = [track1Status, track2Status, track3Status];
+  //   const isNotAvailable = (currentTrack) => currentTrack == false;
+  //   const bullet = this.createBulletText(this.state.bulletText.inputContent)
+  //   if (trackStatus.every(isNotAvailable)) {
+  //     console.log("no track is available")
+  //     this.setState({ bulletText: { ...bulletText, content: bulletText.inputContent, inputContent: "", queue: [...bulletText.queue, bullet] } })
+  //   } else {
+  //     const availableTracks = trackStatus.map((currentTrack,index) =>currentTrack?index+1:-1).filter(currentNumber=>currentNumber>=0);
+  //     const randomTrack = availableTracks[Math.floor(Math.random() * availableTracks.length)];
+  //     // console.log("available track:",availableTracks,"randomtrack",randomTrack)
+  //     this.setState({
+  //       bulletText:{
+  //         ...bulletText,
+  //         content: bulletText.inputContent, 
+  //         inputContent: "",
+  //         [`track${randomTrack}`]:[...bulletText[[`track${randomTrack}`]],bullet],
+  //         [`track${randomTrack}Status`]:false,
+  //       }
+  //     })
+  //     this.timerChangeStatus(randomTrack);
+  //   }
+  // }
 
   checkTrackStatus = () => {
     const {bulletText}=this.state;
     const { track1Status, track2Status, track3Status } = this.state.bulletText;
     const trackStatus = [track1Status, track2Status, track3Status];
     const isNotAvailable = (currentTrack) => currentTrack == false;
-    const bullet = this.createBulletText(this.state.bulletText.inputContent)
     if (trackStatus.every(isNotAvailable)) {
-      console.log("no track is available")
-      this.setState({ bulletText: { ...bulletText, content: bulletText.inputContent, inputContent: "", queue: [...bulletText.queue, bullet] } })
+      return false;
     } else {
       const availableTracks = trackStatus.map((currentTrack,index) =>currentTrack?index+1:-1).filter(currentNumber=>currentNumber>=0);
       const randomTrack = availableTracks[Math.floor(Math.random() * availableTracks.length)];
-      // console.log("available track:",availableTracks,"randomtrack",randomTrack)
-      this.setState({
-        bulletText:{
-          ...bulletText,
-          content: bulletText.inputContent, 
-          inputContent: "",
-          [`track${randomTrack}`]:[...bulletText[[`track${randomTrack}`]],bullet],
-          [`track${randomTrack}Status`]:false,
-        }
-      })
-      this.timerChangeStatus(randomTrack);
+      return randomTrack
     }
   }
 
@@ -220,19 +227,19 @@ class App extends React.Component {
       this.setState({bulletText:{...bulletText,[`track${order}Status`]:true}})
     }, 5000)
   }
-  createBulletText = (bulletContent) => {
-    return <BulletText content={bulletContent} key={new Date().getTime()} destroyBulletText={this.destroyBulletText} />
+  createBulletText = (bulletContent,targetTrack) => {
+    return <BulletText content={bulletContent} key={new Date().getTime()} target={targetTrack} destroyBulletText={this.destroyBulletText} />
   }
 
-  destroyBulletText = (bullet) => {
+  destroyBulletText = (targetTrack) => {
     const { bulletText } = this.state;
-    var newQueue = [...bulletText.queue];
-    console.log(bullet)
-    this.setState({ bulletText: { ...bulletText, queue: newQueue.shift() } })
+    let track = [...bulletText[[`track${targetTrack}`]]];
+    console.log(track)
+    let newTrack = (track.length>1)?[track.shift()]:[];
+    this.setState({ bulletText: { ...bulletText, [`track${targetTrack}`]:newTrack} })
 
   }
 
-  
 
   render() {
     const { currentPhone, marquee, publicMarquee, welcomeEffect, bulletText } = this.state;
