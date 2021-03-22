@@ -54,7 +54,7 @@ class BulletText extends React.Component {
           <Avatar size={32} imgsrc="https://i.pravatar.cc/50"/>
           <BulletTextNickname className="nickname tl-title3">Nickname:</BulletTextNickname>
           <BulletTextContent className="content tl-caption">{this.props.content}</BulletTextContent>
-        
+        {console.log("bulletText",this)}
       </BulletTextWrapper>
     )
   }
