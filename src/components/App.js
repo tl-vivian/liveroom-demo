@@ -254,6 +254,7 @@ class App extends React.Component {
                 {welcomeEffect.show && <WelcomeEffect level="Diamond" />}
                 {marquee.show && <Marquee duration={marquee.duration} content={marquee.content} />}
                 <BulletTracks order={1} status={bulletText.track1Status} onClick={()=>this.checkTrackStatus()}>
+                  {bulletText.track1}
                 </BulletTracks>
                 <BulletTracks order={2} status={bulletText.track2Status} onClick={() => {this.setState({ bulletText: { ...bulletText, track2Status: !bulletText.track2Status } });this.timerChangeStatus("2")}}>
                   {bulletText.track2}
