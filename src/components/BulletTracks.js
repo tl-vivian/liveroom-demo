@@ -3,12 +3,13 @@ import styled,{keyframes} from "styled-components";
 import BulletText from "./BulletText";
 
 const StyledBulletTracks = styled.div`
-    display:flex;
-    flex-direction:column;
-    position:absolute;
+    background-color:${props=>props.status?"rgba(0,204,0,0.5)":"rgba(204,0,0,0.5)"};
+    height:56px;
     left:-16px;
-    right:-16px;;
-
+    right:-16px;
+    bottom:${props=>(props.order-1)*56+32}px;
+    position:absolute;
+    
 `;
 const StyledBulletTrack = styled.div`
     background-color:${props=>props.availability?"rgba(0,204,0,.5)":"rgba(204,0,0,0.5)"};
@@ -19,10 +20,10 @@ const StyledBulletTrack = styled.div`
 
 const BulletTrack = (props)=>{
     return(
-        <styledBulletTrack {...props}>
-            {props.name}
+        <StyledBulletTracks {...props}>
+            {props.order}
             {props.children}
-        </styledBulletTrack>
+        </StyledBulletTracks>
     )
 }
 

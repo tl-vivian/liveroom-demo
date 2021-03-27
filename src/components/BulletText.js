@@ -28,7 +28,7 @@ const BulletTextWrapper = styled.div`
     }
 
    
-    animation: ${movein} 6s linear infinite;
+    animation: ${movein} 15s linear ;
 `;
 const BulletTextNickname = styled.p`
 
@@ -50,11 +50,11 @@ class BulletText extends React.Component {
   }
   render() {
     return(
-      <BulletTextWrapper ref={el => (this.container = el)} className="bullet-text">
+      <BulletTextWrapper ref={el => (this.container = el)} className="bullet-text" onAnimationEnd={()=>this.props.destroyBulletText(this.props.target)}>
           <Avatar size={32} imgsrc="https://i.pravatar.cc/50"/>
           <BulletTextNickname className="nickname tl-title3">Nickname:</BulletTextNickname>
           <BulletTextContent className="content tl-caption">{this.props.content}</BulletTextContent>
-        
+        {console.log("bulletText",this)}
       </BulletTextWrapper>
     )
   }
