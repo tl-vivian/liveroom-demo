@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap");
+
+/* ---- CSS Reset ---- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  /* outline: 1px red solid; */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+html {
+  font-size: 16px;
+}
+
+input,
+input:focus,
+button,
+button:focus {
+  border: none;
+  outline: none;
+}
+ul,
+li {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* ---- styles from zeplin ---- */
+:root {
+  --primary: #f2694e;
+  --primary10: rgba(242, 105, 78 0.1);
+  --primary25: rgba(242, 105, 78, 0.25);
+  --primary50: rgba(242, 105, 78, 0.5);
+  --primaryLight: #fd856d;
+  --primaryDark: #d44d39;
+  --red: #ff7474;
+  --yellow: #ffc638;
+  --skyBlue: #4fccf5;
+  --green: #92dcd0;
+  --blueViolet: #a974ff;
+  --purple: #c564da;
+  --roseBrown: #d4a1a5;
+  --ivory: rgba(255, 236, 214, 1);
+  --black: #222222;
+  --black95: rgba(34, 34, 34, 0.95);
+  --black75: rgba(34, 34, 34, 0.75);
+  --black50: rgba(34, 34, 34, 0.5);
+  --black40: rgba(34, 34, 34, 0.4);
+  --black25: rgba(34, 34, 34, 0.25);
+  --black10: rgba(34, 34, 34, 0.1);
+  --black0: rgba(34, 34, 34, 0);
+  --grey1: #444444;
+  --grey2: #888888;
+  --grey3: #cccccc;
+  --lightGrey1: #ebebeb;
+  --lightGrey2: #f6f6f6;
+  --lightGrey3: #fbfbfb;
+  --white: #ffffff;
+  --white90: rgba(255, 255, 255, 0.9);
+  --white75: rgba(255, 255, 255, 0.75);
+  --white50: rgba(255, 255, 255, 0.5);
+  --white25: rgba(255, 255, 255, 0.25);
+  --white10: rgba(255, 255, 255, 0.1);
+  --white0: rgba(255, 255, 255, 0);
+  --black-shade: linear-gradient(var(--black25), var(--black0));
+  /* linear-gradient(red 10%, 30%, blue 90%); */
+  --text-shadow-for-white: var(--black25) 0px 0px 2px;
+}
+
+.t-headline {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.t-title1 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.t-body1 {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.t-title2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+}
+
+.t-body2 {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.43;
+}
+.t-bold2 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.43;
+}
+
+.t-caption {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.33;
+}
+
+.t-level-badge-number {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.t-smallcaption {
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* --------------------------- */
+
+body {
+  font-family: "Noto Sans TC";
+  z-index: 1;
+}
+
+.phone {
+  position: relative;
+}
+.mockup {
+  height: 100%;
+  width: 100%;
+  border: white 1px solid;
+  z-index: 10;
+}
+.app {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.streaming {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(68, 66, 66);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("/img1.d3031538.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.streaming video {
+  height: 100%;
+  width: 100%;
+}
+.shades {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.top-shade {
+  width: 100%;
+  height: 20%;
+  background: var(--black-shade);
+  z-index: 100;
+}
+.bottom-shade {
+  width: 100%;
+  height: 20%;
+  background: var(--black-shade);
+  z-index: 100;
+  transform: rotate(180deg);
+}
+
+/* ---- some reusable component styles ---*/
+.avatar40 {
+  height: 40px;
+  width: 40px;
+  background-image: url("/default_avatar.ab4aeb4c.svg");
+  background-size: 32px 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* ----------------------- */
+
+.msg {
+  background-color: var(--black40);
+  border-radius: 4px;
+  color: var(--white);
+  text-shadow: 0 0 2px var(--black50);
+  margin: 2px 0;
+  padding: 2px 4px;
+  word-break: break-all;
+}
+.msg > * {
+  margin: 2px;
+  vertical-align: middle;
+}
+.msg-nickname {
+  color: var(--ivory);
+}
+
+.tool-panel {
+  background-color: var(--black95);
+}
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */

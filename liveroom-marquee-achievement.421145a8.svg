@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="284px" height="28px" viewBox="0 0 284 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>liveroom-marquee-achievement</title>
+    <defs>
+        <linearGradient x1="0%" y1="49.5139853%" x2="100%" y2="50.4860147%" id="linearGradient-1">
+            <stop stop-color="#FA1B58" offset="0%"></stop>
+            <stop stop-color="#873CFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Gift" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="直播間跑馬燈-/-熱度門檻" transform="translate(0.000000, -6.000000)">
+            <g id="liveroom-marquee-achievement" transform="translate(0.000000, 6.000000)">
+                <path d="M0,0 L280,0 C282.209139,-4.05812251e-16 284,1.790861 284,4 L284,24 C284,26.209139 282.209139,28 280,28 L0,28 L0,28 L0,0 Z" id="Marquee-Base" fill="url(#linearGradient-1)"></path>
+                <g id="Patterns" transform="translate(39.000000, 0.000000)" fill="#FFFFFF" fill-opacity="0.25" opacity="0.733604997">
+                    <path d="M199,0 L220.833984,28 L216.833984,28 L195,0 L199,0 Z M193,0 L214.833984,28 L206.833984,28 L185,0 L193,0 Z M63,0 L84.8339844,28 L68.8339844,28 L47,0 L63,0 Z M18,0 L39.8339844,28 L31.8339844,28 L10,0 L18,0 Z M4,0 L25.8339844,28 L21.8339844,28 L0,0 L4,0 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

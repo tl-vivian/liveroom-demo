@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="284px" height="28px" viewBox="0 0 284 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>liveroom-marquee-ranking</title>
+    <defs>
+        <linearGradient x1="-1.11022302e-14%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#FF9133" offset="0%"></stop>
+            <stop stop-color="#FA1B58" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Gift" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="直播間跑馬燈-/-當前點數" transform="translate(0.000000, -6.000000)">
+            <g id="liveroom-marquee-ranking" transform="translate(0.000000, 6.000000)">
+                <path d="M0,0 L278.090934,0 C284,0 284.991699,5.06164551 282.949951,9.0357666 L275.039647,24.7806741 C274.169678,26.4398193 272.363037,28 269.722895,28 L0,28 L0,0 Z" id="Marquee-Base" fill="url(#linearGradient-1)"></path>
+                <g id="Patterns" fill="#FFFFFF" opacity="0.733604997">
+                    <polygon id="Rectangle" fill-opacity="0.25" points="238 -1.77635684e-15 234 -1.77635684e-15 255.833984 28 259.833984 28"></polygon>
+                    <polygon id="Rectangle" fill-opacity="0.25" points="232 -1.77635684e-15 224 -1.77635684e-15 245.833984 28 253.833984 28"></polygon>
+                    <polygon id="Rectangle" fill-opacity="0.75" points="20 -1.77635684e-15 0 -1.77635684e-15 21.8339844 28 41.8339844 28"></polygon>
+                    <polygon id="Rectangle" fill-opacity="0.25" points="57 0 49 0 70.8339844 28 78.8339844 28"></polygon>
+                    <polygon id="Rectangle" fill-opacity="0.75" points="43 -1.77635684e-15 39 -1.77635684e-15 60.8339844 28 64.8339844 28"></polygon>
+                    <polygon id="Rectangle" fill-opacity="0.5" points="37 -1.77635684e-15 29 -1.77635684e-15 50.8339844 28 58.8339844 28"></polygon>
+                    <polygon id="Rectangle" fill-opacity="0.5" points="102 -1.77635684e-15 86 -1.77635684e-15 107.833984 28 123.833984 28"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

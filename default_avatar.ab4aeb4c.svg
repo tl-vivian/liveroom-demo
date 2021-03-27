@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 61 (101010) - https://sketch.com -->
+    <title>14DE5A6E-785A-4175-8DE4-BDDFFB6BD3C6</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Spec" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Avatar-Default" transform="translate(-365.000000, -100.000000)">
+            <g id="avatar32" transform="translate(365.000000, 100.000000)">
+                <circle id="Background" stroke="#EBEBEB" stroke-width="0.666666667" fill="#F6F6F6" cx="16" cy="16" r="15.6666667"></circle>
+                <path d="M16.2443297,18.8 C21.3386587,18.8 25.6525324,22.3524227 27.1137074,26.9632324 C24.0200195,29.9911621 20.302429,31.6010254 16.0443297,31.6010254 C11.7862305,31.6010254 8.08164062,30.1273926 5.28668986,27.3275391 C6.655513,22.5668527 11.0431528,18.8 16.2443297,18.8 Z" id="Path" fill="#EBEBEB"></path>
+                <circle id="Head" fill="#EBEBEB" cx="16.2" cy="10.6" r="5.8"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
