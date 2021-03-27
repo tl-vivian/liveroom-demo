@@ -1,18 +1,17 @@
-import React from 'react';
-import styled ,{keyframes}from "styled-components";
-import Avatar from './Avatar';
-import IconButton from './IconButton';
-import {FireIcon,StarIcon,DiamondIcon} from '../assets';
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import Avatar from "./Avatar";
+import IconButton from "./IconButton";
+import { FireIcon, StarIcon, DiamondIcon } from "../assets";
 import AvatarImage from "../assets/img2.png";
-
 
 const RoomInfoWrapper = styled.div`
   // *{
   //   outline:1px solid red;
   // }
-  position:absolute;
-  top:0;
-  left:0;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   height: 48px;
@@ -25,13 +24,12 @@ const RoomInfoWrapper = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-left:8px;
-    gap:4px;
+    margin-left: 8px;
+    gap: 4px;
   }
 
-
-  .icon-button{
-    background-color:transparent;
+  .icon-button {
+    background-color: transparent;
   }
 `;
 
@@ -72,51 +70,51 @@ const flip = keyframes`
 `;
 
 const HostnameMarquee = styled.span`
-display : flex;
-flex-shrink: 0;
-overflow:hidden;
-height: 16px;
-width:72px;
-align-items: center;
-.host-nickname{
-  animation: ${marquee} 20s linear infinite;
-  min-width:100px;
-}
+  display: flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  height: 16px;
+  width: 72px;
+  align-items: center;
+  .host-nickname {
+    animation: ${marquee} 20s linear infinite;
+    min-width: 100px;
+  }
 `;
 const HostLiveDataWrapper = styled.div`
-  height:16px;
-  overflow-y:hidden;
+  height: 16px;
+  overflow-y: hidden;
   .host-live-data {
     display: flex;
     align-items: center;
     animation: ${flip} 6s linear infinite;
   }
+`;
 
-`
-
-export default function RoomInfo(){
-return(
+export default function RoomInfo() {
+  return (
     <RoomInfoWrapper className="host-info">
-    <Avatar size={48} imgsrc={AvatarImage}/>
-    <div className="host-status">
-      <HostnameMarquee className="room-info-marquee">
-      <p className="host-nickname t-caption">Host Nickname</p>
-      <p className="host-nickname t-caption">Host Nickname</p>
-      </HostnameMarquee>
-      <HostLiveDataWrapper>
-      <span className="host-live-data live-popularity t-caption">
-        <FireIcon/> 222,222
-      </span>
-      <span className="host-live-data live-income t-caption">
-        <DiamondIcon/> 111,111
-      </span>
-      <span className="host-live-data live-popularity t-caption">
-        <FireIcon/> 222,222
-      </span>
-      </HostLiveDataWrapper>
-
-    </div>
-    <IconButton bgcolor="transparent" color="#eeeeee"><StarIcon/></IconButton>
-  </RoomInfoWrapper>
-)
+      <Avatar size={48} imgsrc={AvatarImage} />
+      <div className="host-status">
+        <HostnameMarquee className="room-info-marquee">
+          <p className="host-nickname t-caption">Host Nickname</p>
+          <p className="host-nickname t-caption">Host Nickname</p>
+        </HostnameMarquee>
+        <HostLiveDataWrapper>
+          <span className="host-live-data live-popularity t-caption">
+            <FireIcon /> 222,222
+          </span>
+          <span className="host-live-data live-income t-caption">
+            <DiamondIcon /> 111,111
+          </span>
+          <span className="host-live-data live-popularity t-caption">
+            <FireIcon /> 222,222
+          </span>
+        </HostLiveDataWrapper>
+      </div>
+      <IconButton bgcolor="transparent" color="#eeeeee">
+        <StarIcon />
+      </IconButton>
+    </RoomInfoWrapper>
+  );
 }

@@ -1,24 +1,24 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
-import Avatar from './Avatar';
-import {LevelBadge} from './Badges';
+import Avatar from "./Avatar";
+import { LevelBadge } from "./Badges";
 const AudienceItemWrapper = styled.ul`
- display:flex;
- height:72px;
- width:100%;
-display:flex;
-align-items:center;
-justify-content:start;
- color:white;
-.avatar{
-    margin:8px;
-}
-.level-badge{
-    margin-left:8px;
-}
-.audience-nickname{
-    margin-left:4px;
-}
+  display: flex;
+  height: 72px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: white;
+  .avatar {
+    margin: 8px;
+  }
+  .level-badge {
+    margin-left: 8px;
+  }
+  .audience-nickname {
+    margin-left: 4px;
+  }
 `;
 const AudienceItemSuperWrapper = styled.li`
  height:140px;
@@ -39,24 +39,22 @@ justify-content:center;
     overflow:hidden;
 `;
 
-
-
-export function AudienceItem(props){
-return(
-  <AudienceItemWrapper className="audience-item">
-      <Avatar size={48} imgsrc="https://i.pravatar.cc/50"/>
-    <LevelBadge level="Bronze" levelNumber={30}/>
-    <p className="audience-nickname tl-body2">NicknameNickname</p>
-  </AudienceItemWrapper>
-)
+export function AudienceItem() {
+  return (
+    <AudienceItemWrapper className="audience-item">
+      <Avatar size={48} imgsrc="https://i.pravatar.cc/50" />
+      <LevelBadge level="Bronze" levelNumber={30} />
+      <p className="audience-nickname tl-body2">NicknameNickname</p>
+    </AudienceItemWrapper>
+  );
 }
 
-export function AudienceItemSuper(props){
-    return(
-      <AudienceItemSuperWrapper className="audience-item">
-          <Avatar size={48} imgsrc="https://i.pravatar.cc/50"/>
-        <LevelBadge level="Bronze" levelNumber={30}/>
-        <p className="audience-nickname tl-body2">NicknameNickname</p>
-      </AudienceItemSuperWrapper>
-    )
-    }
+export function AudienceItemSuper() {
+  return (
+    <AudienceItemSuperWrapper className="audience-item">
+      <Avatar size={48} imgsrc="https://i.pravatar.cc/50" />
+      <LevelBadge level="Bronze" levelNumber={30} />
+      <p className="audience-nickname tl-body2">NicknameNickname</p>
+    </AudienceItemSuperWrapper>
+  );
+}

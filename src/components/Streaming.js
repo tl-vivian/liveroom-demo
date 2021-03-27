@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-
 const StreamingWrapper = styled.div`
   height: 100%;
-  width:100%;
-  position:absolute;
+  width: 100%;
+  position: absolute;
 `;
 export default function Streaming() {
   return (
@@ -16,6 +15,5 @@ export default function Streaming() {
         <div className="bottom-shade"></div>
       </div>
     </StreamingWrapper>
-
   );
 }

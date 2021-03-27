@@ -1,6 +1,6 @@
 import React from "react";
-import {marqueeImg} from "../assets";
-import styled ,{keyframes}from 'styled-components';
+import { marqueeImg } from "../assets";
+import styled, { keyframes } from "styled-components";
 
 const slidein = keyframes`
   0% {
@@ -38,46 +38,47 @@ const marquee = keyframes`
 `;
 
 const StyledMarquee = styled.div`
-    height:28px;
-    width:284px;
-    color:var(--white);
-    text-shadow:var(--text-shadow-for-white);
-    position:absolute;
-    left:-16px;
-    top:-34px;
-    z-index:20;
-    animation:${slidein} ${props=>props.duration*2}s ease-in-out infinite ;
-    .marquee-content{
-      position:absolute;
-      top:2px;
-      left:44px;
-      right:8px;
-      display:flex;
-      overflow:hidden;
-        span{
-            flex-shrink:0;
-            animation: ${marquee} ${props=>props.duration*2}s linear infinite;
-        }
+  height: 28px;
+  width: 284px;
+  color: var(--white);
+  text-shadow: var(--text-shadow-for-white);
+  position: absolute;
+  left: -16px;
+  top: -34px;
+  z-index: 20;
+  animation: ${slidein} ${(props) => props.duration * 2}s ease-in-out infinite;
+  .marquee-content {
+    position: absolute;
+    top: 2px;
+    left: 44px;
+    right: 8px;
+    display: flex;
+    overflow: hidden;
+    span {
+      flex-shrink: 0;
+      animation: ${marquee} ${(props) => props.duration * 2}s linear infinite;
     }
-    .animation-celebrate{
-      height:40px;
-      width:40px;
-      position:absolute;
-      top:-6px;
-      left:4px;
-      z-index:30;
-    }
+  }
+  .animation-celebrate {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: -6px;
+    left: 4px;
+    z-index: 30;
+  }
 `;
 
-
 export default function Marquee(props) {
-  
   return (
     <StyledMarquee className="marquee" {...props}>
-      <img className="animation-celebrate" src={marqueeImg.achievementCelebrate}/>
-      <img src={marqueeImg.achievement}/>
+      <img
+        className="animation-celebrate"
+        src={marqueeImg.achievementCelebrate}
+      />
+      <img src={marqueeImg.achievement} />
       <span className="marquee-content">
-          <span>{props.content}</span>
+        <span>{props.content}</span>
       </span>
     </StyledMarquee>
   );

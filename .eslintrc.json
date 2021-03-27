@@ -1,6 +1,7 @@
 {
-  "extends": ["eslint:recommended", "prettier", "prettier/react"],
+  "extends": ["eslint:recommended", "prettier", "prettier/react","plugin:react/recommended"],
   "plugins": [],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
@@ -12,5 +13,6 @@
     "es6": true,
     "browser": true,
     "node": true
-  }
+  },
+  "rules":{"react/prop-types": "off"}
 }

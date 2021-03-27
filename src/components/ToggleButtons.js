@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledToggleButtons = styled.ul`
   display: flex;
-  margin:0.2rem;
+  margin: 0.2rem;
   li {
     color: var(--white25);
     text-align: center;
@@ -21,7 +21,7 @@ const StyledToggleButtons = styled.ul`
       background-color: none;
       border-radius: 21px;
       border: 1px solid var(--white25);
-      font-size:14px;
+      font-size: 14px;
     }
     input:checked + label {
       background-color: var(--white25);
@@ -44,7 +44,7 @@ export default function ToggleButtons(props) {
               id={option}
               value={option}
               onChange={() => props.handlePhone(i)}
-              checked={props.selected ===i}
+              checked={props.selected === i}
             />
             <label htmlFor={option}>{option}</label>
           </li>

@@ -31,8 +31,6 @@ export * from "./icons/ShareIcon";
 export * from "./icons/StarIcon";
 export * from "./icons/BulletinIcon";
 
-
-
 // import Bulletin from './Icons/icon-bulletin.svg';
 // import Sofa from './Icons/icon-sofa.svg';
 // import ChevronDown from './Icons/icon-chevron-down.svg';
@@ -60,8 +58,8 @@ export const levelBadge = {
 };
 
 export const marqueeImg = {
-  public:PublicMarqueeBg,
-  ranking:RankingMarqueeBg,
-  achievement:AchievementMarqueeBg,
-  achievementCelebrate:Celebration,
-}
+  public: PublicMarqueeBg,
+  ranking: RankingMarqueeBg,
+  achievement: AchievementMarqueeBg,
+  achievementCelebrate: Celebration,
+};

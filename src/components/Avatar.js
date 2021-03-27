@@ -1,19 +1,17 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
-import * as Icon from "react-feather";
-
 
 const AvatarWrapper = styled.div`
-  border-radius:100%;
-  background-image:url(${props=>props.imgsrc});
-  background-size:cover;
-  height:${props=>props.size}px;
-  width:${props=>props.size}px;
+  border-radius: 100%;
+  background-image: url(${(props) => props.imgsrc});
+  background-size: cover;
+  height: ${(props) => props.size}px;
+  width: ${(props) => props.size}px;
 `;
-export default function Avatar(props){
-return(
+export default function Avatar(props) {
+  return (
     <AvatarWrapper className="avatar" {...props}>
-    <div {...props}></div>
-  </AvatarWrapper>
-)
+      <div {...props}></div>
+    </AvatarWrapper>
+  );
 }

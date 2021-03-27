@@ -4,10 +4,10 @@ import styled from "styled-components";
 const ShareIconWrapper = styled.svg`
   width: 24px;
   height: 24px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  fill:currentColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: currentColor;
 `;
 
 export const ShareIcon = () => (
