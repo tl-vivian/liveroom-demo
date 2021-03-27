@@ -31630,33 +31630,33 @@ function ToggleButtons(props) {
   }));
 }
 },{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"assets/badge-levelBronze-chatroom-36x20.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/badge-levelBronze-chatroom-36x20.272ac212.png";
+module.exports = "badge-levelBronze-chatroom-36x20.272ac212.png";
 },{}],"assets/badge-levelSilver-chatroom-36x20.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/badge-levelSilver-chatroom-36x20.f8584024.png";
+module.exports = "badge-levelSilver-chatroom-36x20.f8584024.png";
 },{}],"assets/badge-levelGold-chatroom-36x20.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/badge-levelGold-chatroom-36x20.718de856.png";
+module.exports = "badge-levelGold-chatroom-36x20.718de856.png";
 },{}],"assets/badge-levelDiamond-chatroom-36x20.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/badge-levelDiamond-chatroom-36x20.cfe4d0c1.png";
+module.exports = "badge-levelDiamond-chatroom-36x20.cfe4d0c1.png";
 },{}],"assets/badge-levelDarkGold-chatroom-36x20.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/badge-levelDarkGold-chatroom-36x20.e0553447.png";
+module.exports = "badge-levelDarkGold-chatroom-36x20.e0553447.png";
 },{}],"assets/badge-levelBronze-36x20.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/badge-levelBronze-36x20.13b8c549.png";
+module.exports = "badge-levelBronze-36x20.13b8c549.png";
 },{}],"assets/badge-levelSilver-36x20.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/badge-levelSilver-36x20.f768723b.png";
+module.exports = "badge-levelSilver-36x20.f768723b.png";
 },{}],"assets/badge-levelGold-36x20.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/badge-levelGold-36x20.06da35fd.png";
+module.exports = "badge-levelGold-36x20.06da35fd.png";
 },{}],"assets/badge-levelDiamond-36x20.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/badge-levelDiamond-36x20.61fdb981.png";
+module.exports = "badge-levelDiamond-36x20.61fdb981.png";
 },{}],"assets/badge-levelDarkGold-36x20.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/badge-levelDarkGold-36x20.f94f57e6.png";
+module.exports = "badge-levelDarkGold-36x20.f94f57e6.png";
 },{}],"assets/gold-marquee.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/gold-marquee.382c5ced.png";
+module.exports = "gold-marquee.382c5ced.png";
 },{}],"assets/liveroom-marquee-achievement.svg":[function(require,module,exports) {
-module.exports = "liveroom-demo/liveroom-marquee-achievement.56724d4f.svg";
+module.exports = "liveroom-marquee-achievement.56724d4f.svg";
 },{}],"assets/liveroom-marquee-ranking.svg":[function(require,module,exports) {
-module.exports = "liveroom-demo/liveroom-marquee-ranking.09a3dd32.svg";
+module.exports = "liveroom-marquee-ranking.09a3dd32.svg";
 },{}],"assets/animation_celebrate.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/animation_celebrate.9f6f7018.png";
+module.exports = "animation_celebrate.9f6f7018.png";
 },{}],"assets/icons/ArrowIcon.js":[function(require,module,exports) {
 "use strict";
 
@@ -32528,7 +32528,7 @@ function Avatar(props) {
   }, props), /*#__PURE__*/_react.default.createElement("div", props));
 }
 },{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"assets/img2.png":[function(require,module,exports) {
-module.exports = "liveroom-demo/img2.ffa861a8.png";
+module.exports = "img2.ffa861a8.png";
 },{}],"components/RoomInfo.js":[function(require,module,exports) {
 "use strict";
 
@@ -33000,7 +33000,7 @@ function BulletinButton() {
   }))), isOpen && /*#__PURE__*/_react.default.createElement(BulletinContent, null));
 }
 },{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../assets":"assets/index.js"}],"assets/giftButton.webp":[function(require,module,exports) {
-module.exports = "liveroom-demo/giftButton.1af04ba6.webp";
+module.exports = "giftButton.1af04ba6.webp";
 },{}],"components/LiveChatUI.js":[function(require,module,exports) {
 "use strict";
 
@@ -34253,7 +34253,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54711" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58914" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -34430,4 +34430,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","components/App.js"], null)
-//# sourceMappingURL=liveroom-demo/App.98f4d852.js.map
+//# sourceMappingURL=App.98f4d852.js.map

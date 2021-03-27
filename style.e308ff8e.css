@@ -160,7 +160,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("liveroom-demo/img1.d3031538.png");
+  background-image: url("img1.d3031538.png");
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -197,7 +197,7 @@ body {
 .avatar40 {
   height: 40px;
   width: 40px;
-  background-image: url("liveroom-demo/default_avatar.ab4aeb4c.svg");
+  background-image: url("default_avatar.ab4aeb4c.svg");
   background-size: 32px 32px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -227,4 +227,4 @@ body {
 }
 
 
-/*# sourceMappingURL=liveroom-demo/style.e308ff8e.css.map */
+/*# sourceMappingURL=style.e308ff8e.css.map */
