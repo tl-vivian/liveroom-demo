@@ -15,6 +15,7 @@ export default function BulletTracks(props){
     return(
         <StyledBulletTracks {...props}>
             {props.order}
+            {props.children}
         </StyledBulletTracks>
     )
 }
