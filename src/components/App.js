@@ -9,6 +9,7 @@ import Marquee from "./Marquee";
 import PublicMarquee from "./PublicMarquee";
 import BulletText from "./BulletText";
 import BulletTracks from "./BulletTracks";
+import Tracks from "./Tracks";
 
 const StyledApp = styled.div`
   display: flex;
@@ -220,32 +221,6 @@ class App extends React.Component {
     }
   };
 
-  // checkTrackStatus = () => {
-  //   const {bulletText}=this.state;
-  //   const { track1Status, track2Status, track3Status } = this.state.bulletText;
-  //   const trackStatus = [track1Status, track2Status, track3Status];
-  //   const isNotAvailable = (currentTrack) => currentTrack == false;
-  //   const bullet = this.createBulletText(this.state.bulletText.inputContent)
-  //   if (trackStatus.every(isNotAvailable)) {
-  //     console.log("no track is available")
-  //     this.setState({ bulletText: { ...bulletText, content: bulletText.inputContent, inputContent: "", queue: [...bulletText.queue, bullet] } })
-  //   } else {
-  //     const availableTracks = trackStatus.map((currentTrack,index) =>currentTrack?index+1:-1).filter(currentNumber=>currentNumber>=0);
-  //     const randomTrack = availableTracks[Math.floor(Math.random() * availableTracks.length)];
-  //     // console.log("available track:",availableTracks,"randomtrack",randomTrack)
-  //     this.setState({
-  //       bulletText:{
-  //         ...bulletText,
-  //         content: bulletText.inputContent,
-  //         inputContent: "",
-  //         [`track${randomTrack}`]:[...bulletText[[`track${randomTrack}`]],bullet],
-  //         [`track${randomTrack}Status`]:false,
-  //       }
-  //     })
-  //     this.timerChangeStatus(randomTrack);
-  //   }
-  // }
-
   checkTrackStatus = () => {
     const { track1Status, track2Status, track3Status } = this.state.bulletText;
     const trackStatus = [track1Status, track2Status, track3Status];
@@ -323,6 +298,7 @@ class App extends React.Component {
                     content={marquee.content}
                   />
                 )}
+                <Tracks/>
                 <BulletTracks order={1} status={bulletText.track1Status}>
                   {bulletText.track1}
                 </BulletTracks>
