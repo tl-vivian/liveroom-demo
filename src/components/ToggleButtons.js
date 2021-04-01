@@ -43,7 +43,7 @@ export default function ToggleButtons(props) {
               name={props.name}
               id={option}
               value={option}
-              onChange={() => props.handlePhone(i)}
+              onChange={() => props.handleToggle(i)}
               checked={props.selected === i}
             />
             <label htmlFor={option}>{option}</label>

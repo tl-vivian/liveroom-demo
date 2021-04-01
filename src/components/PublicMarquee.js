@@ -94,7 +94,7 @@ export default function PublicMarquee(props) {
       <div className="marquee-content t-title1">
         <span>恭喜小魚兒收到小魚兒的頭號粉絲的心想事成</span>
       </div>
-      <img src={marqueeImg.silver} height={72} width={360} />
+      <img src={marqueeImg[props.type]} height={72} width={360} />
     </StyledPublicMarquee>
   );
 }

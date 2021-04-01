@@ -41,13 +41,14 @@ const StyledApp = styled.div`
       input {
         position: absolute;
         right: 0;
+        background-color:red;
       }
     }
     .option-input {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      margin: 8px 0;
+      margin: 16px 0;
       label {
         color: var(--grey2);
         flex-shrink: 0;
@@ -61,7 +62,16 @@ const StyledApp = styled.div`
         padding: 4px 8px;
         text-align: center;
         font-weight: bold;
+        width:100%;
+        height:28px;
+        margin-left:8px;
       }
+    }
+    button{
+      background-color:var(--roseBrown);
+      padding:6px 16px;
+      margin-left:8px;
+      border-radius:4px;
     }
   }
 `;
@@ -121,6 +131,7 @@ class App extends React.Component {
       publicMarquee: {
         show: false,
         duration: 10,
+        type:1, 
       },
       gift: {
         show: false,
@@ -148,6 +159,14 @@ class App extends React.Component {
       publicMarquee: {
         ...this.state.publicMarquee,
         duration: event.target.value,
+      },
+    });
+  };
+  handlePublicMarqueeType = (event) => {
+    this.setState({
+      publicMarquee: {
+        ...this.state.publicMarquee,
+        type: event,
       },
     });
   };
@@ -295,7 +314,7 @@ class App extends React.Component {
               <Streaming />
               <LiveChatUI type={phones[currentPhone].type}>
                 {publicMarquee.show && (
-                  <PublicMarquee duration={publicMarquee.duration} />
+                  <PublicMarquee duration={publicMarquee.duration} type={publicMarquee.type?"golden":"silver"} />
                 )}
                 {welcomeEffect.show && <WelcomeEffect level="Diamond" />}
                 {marquee.show && (
@@ -319,7 +338,7 @@ class App extends React.Component {
           <ToggleButtons
             name={"phone-sizes"}
             options={phones.map((phone) => phone.phoneName)}
-            handlePhone={this.handlePhoneSize}
+            handleToggle={this.handlePhoneSize}
             selected={currentPhone}
           />
         </main>
@@ -399,6 +418,12 @@ class App extends React.Component {
               />
             </summary>
             <div className="option-input">
+              <ToggleButtons
+                name={"public-marquee-type"}
+                options={["銀","金"]}
+                handleToggle={this.handlePublicMarqueeType}
+                selected={publicMarquee.type}
+              />
               <label className="t-body2" htmlFor="public-marquee-duration">
                 長度(s)
               </label>
@@ -425,8 +450,7 @@ class App extends React.Component {
                 }
               />
             </summary>
-            <div className="option-input">
-              <form onSubmit={this.handleBulletSubmit}>
+              <form onSubmit={this.handleBulletSubmit} className="option-input">
                 <label className="t-body2" htmlFor="bullet-text-content">
                   內容
                 </label>
@@ -436,9 +460,8 @@ class App extends React.Component {
                   value={bulletText.inputContent}
                   onChange={this.handleBulletTextContent}
                 />
-                <input type="submit" value="Submit" />
+                <button type="submit" className="bullet-text-submit" onSubmit={this.handleBulletSubmit}>發送</button>
               </form>
-            </div>
           </details>
         </aside>
       </StyledApp>
