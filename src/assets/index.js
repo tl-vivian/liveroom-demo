@@ -11,7 +11,8 @@ import Diamond from "./badge-levelDiamond-36x20.png";
 import DarkGold from "./badge-levelDarkGold-36x20.png";
 
 //Marquees
-import PublicMarqueeBg from "./gold-marquee.png";
+import GoldenMarqueeBg from "./gold-marquee.png";
+import SilverMarqueeBg from "./silver-marquee.png";
 import AchievementMarqueeBg from "./liveroom-marquee-achievement.svg";
 import RankingMarqueeBg from "./liveroom-marquee-ranking.svg";
 import Celebration from "./animation_celebrate.png";
@@ -58,7 +59,8 @@ export const levelBadge = {
 };
 
 export const marqueeImg = {
-  public: PublicMarqueeBg,
+  golden: GoldenMarqueeBg,
+  silver:SilverMarqueeBg,
   ranking: RankingMarqueeBg,
   achievement: AchievementMarqueeBg,
   achievementCelebrate: Celebration,
