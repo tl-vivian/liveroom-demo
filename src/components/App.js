@@ -7,8 +7,6 @@ import LiveChatUI from "./LiveChatUI";
 import WelcomeEffect from "./WelcomeEffect";
 import Marquee from "./Marquee";
 import PublicMarquee from "./PublicMarquee";
-import BulletText from "./BulletText";
-import BulletTracks from "./BulletTracks";
 import Tracks from "./Tracks";
 
 const StyledApp = styled.div`
@@ -118,16 +116,9 @@ class App extends React.Component {
         content: "恭喜婕兒達成 20 萬熱度，一起歡呼吧～",
       },
       bulletText: {
-        show: true,
-        content: "",
-        inputContent: "",
-        queue: [],
-        track1: [],
-        track2: [],
-        track3: [],
-        track1Status: true,
-        track2Status: true,
-        track3Status: true,
+        show:false,
+        content: "彈幕～彈幕～彈幕～",
+        inputContent: "彈幕～彈幕～彈幕～",
       },
       publicMarquee: {
         show: false,
@@ -176,6 +167,7 @@ class App extends React.Component {
       marquee: { ...this.state.marquee, content: event.target.value },
     });
   };
+
   handleBulletTextContent = (event) => {
     this.setState({
       bulletText: {
@@ -184,88 +176,18 @@ class App extends React.Component {
       },
     });
   };
+
   handleBulletSubmit = (event) => {
     event.preventDefault();
-    const { bulletText } = this.state;
-    console.log(this.state);
-    const targetTrack = this.checkTrackStatus();
-    const bullet = this.createBulletText(
-      this.state.bulletText.inputContent,
-      targetTrack
-    );
-    if (!targetTrack) {
-      console.log("no track is available");
-      this.setState({
-        bulletText: {
-          ...bulletText,
-          content: bulletText.inputContent,
-          inputContent: "",
-          queue: [...bulletText.queue, bullet],
-        },
-      });
-    } else {
-      console.log("this bullet goes to", targetTrack);
-      this.setState({
-        bulletText: {
-          ...bulletText,
-          content: bulletText.inputContent,
-          inputContent: "",
-          [`track${targetTrack}`]: [
-            ...bulletText[[`track${targetTrack}`]],
-            bullet,
-          ],
-          [`track${targetTrack}Status`]: false,
-        },
-      });
-      this.timerChangeStatus(targetTrack);
-    }
-  };
-
-  checkTrackStatus = () => {
-    const { track1Status, track2Status, track3Status } = this.state.bulletText;
-    const trackStatus = [track1Status, track2Status, track3Status];
-    const isNotAvailable = (currentTrack) => currentTrack == false;
-    if (trackStatus.every(isNotAvailable)) {
-      return false;
-    } else {
-      const availableTracks = trackStatus
-        .map((currentTrack, index) => (currentTrack ? index + 1 : -1))
-        .filter((currentNumber) => currentNumber >= 0);
-      const randomTrack =
-        availableTracks[Math.floor(Math.random() * availableTracks.length)];
-      return randomTrack;
-    }
-  };
-
-  timerChangeStatus = (order) => {
-    setTimeout(() => {
-      console.log(order);
-      const { bulletText } = this.state;
-      this.setState({
-        bulletText: { ...bulletText, [`track${order}Status`]: true },
-      });
-    }, 5000);
-  };
-  createBulletText = (bulletContent, targetTrack) => {
-    return (
-      <BulletText
-        content={bulletContent}
-        key={new Date().getTime()}
-        target={targetTrack}
-        destroyBulletText={this.destroyBulletText}
-      />
-    );
-  };
-
-  destroyBulletText = (targetTrack) => {
-    const { bulletText } = this.state;
-    let track = [...bulletText[[`track${targetTrack}`]]];
-    console.log(track);
-    let newTrack = track.length > 1 ? [track.shift()] : [];
     this.setState({
-      bulletText: { ...bulletText, [`track${targetTrack}`]: newTrack },
-    });
-  };
+      bulletText:{
+        ...this.state.bulletText,
+        inputContent:"",
+        content:this.state.bulletText.inputContent
+      }
+    })
+
+  }
 
   render() {
     const {
@@ -298,16 +220,7 @@ class App extends React.Component {
                     content={marquee.content}
                   />
                 )}
-                <Tracks/>
-                <BulletTracks order={1} status={bulletText.track1Status}>
-                  {bulletText.track1}
-                </BulletTracks>
-                <BulletTracks order={2} status={bulletText.track2Status}>
-                  {bulletText.track2}
-                </BulletTracks>
-                <BulletTracks order={3} status={bulletText.track3Status}>
-                  {bulletText.track3}
-                </BulletTracks>
+                {bulletText.show && <Tracks content={bulletText.content}/>}
               </LiveChatUI>
             </div>
           </div>

@@ -17,6 +17,10 @@ import AchievementMarqueeBg from "./liveroom-marquee-achievement.svg";
 import RankingMarqueeBg from "./liveroom-marquee-ranking.svg";
 import Celebration from "./animation_celebrate.png";
 
+//Bullet Text Pattern
+import PrimeBulletStars from "./pattern-prime-bullet-stars.svg";
+import BulletStarryTail from "./animation_bullet_shiny_stars.webp"
+
 //Icons
 
 export * from "./icons/ArrowIcon";
@@ -65,3 +69,8 @@ export const marqueeImg = {
   achievement: AchievementMarqueeBg,
   achievementCelebrate: Celebration,
 };
+
+export const patterns ={
+  primeBullet:PrimeBulletStars,
+  starry:BulletStarryTail
+}
