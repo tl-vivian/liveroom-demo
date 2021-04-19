@@ -31621,7 +31621,7 @@ function ToggleButtons(props) {
       id: option,
       value: option,
       onChange: function onChange() {
-        return props.handlePhone(i);
+        return props.handleToggle(i);
       },
       checked: props.selected === i
     }), /*#__PURE__*/_react.default.createElement("label", {
@@ -31651,12 +31651,18 @@ module.exports = "badge-levelDiamond-36x20.61fdb981.png";
 module.exports = "badge-levelDarkGold-36x20.f94f57e6.png";
 },{}],"assets/gold-marquee.png":[function(require,module,exports) {
 module.exports = "gold-marquee.382c5ced.png";
+},{}],"assets/silver-marquee.png":[function(require,module,exports) {
+module.exports = "silver-marquee.26e5ea27.png";
 },{}],"assets/liveroom-marquee-achievement.svg":[function(require,module,exports) {
 module.exports = "liveroom-marquee-achievement.56724d4f.svg";
 },{}],"assets/liveroom-marquee-ranking.svg":[function(require,module,exports) {
 module.exports = "liveroom-marquee-ranking.09a3dd32.svg";
 },{}],"assets/animation_celebrate.png":[function(require,module,exports) {
 module.exports = "animation_celebrate.9f6f7018.png";
+},{}],"assets/pattern-prime-bullet-stars.svg":[function(require,module,exports) {
+module.exports = "pattern-prime-bullet-stars.6acb1d23.svg";
+},{}],"assets/animation_bullet_shiny_stars.webp":[function(require,module,exports) {
+module.exports = "animation_bullet_shiny_stars.1175f040.webp";
 },{}],"assets/icons/ArrowIcon.js":[function(require,module,exports) {
 "use strict";
 
@@ -32127,9 +32133,10 @@ Object.defineProperty(exports, "__esModule", {
 var _exportNames = {
   levelBadgeChatroom: true,
   levelBadge: true,
-  marqueeImg: true
+  marqueeImg: true,
+  patterns: true
 };
-exports.marqueeImg = exports.levelBadge = exports.levelBadgeChatroom = void 0;
+exports.patterns = exports.marqueeImg = exports.levelBadge = exports.levelBadgeChatroom = void 0;
 
 var _badgeLevelBronzeChatroom36x = _interopRequireDefault(require("./badge-levelBronze-chatroom-36x20.png"));
 
@@ -32153,11 +32160,17 @@ var _badgeLevelDarkGold36x = _interopRequireDefault(require("./badge-levelDarkGo
 
 var _goldMarquee = _interopRequireDefault(require("./gold-marquee.png"));
 
+var _silverMarquee = _interopRequireDefault(require("./silver-marquee.png"));
+
 var _liveroomMarqueeAchievement = _interopRequireDefault(require("./liveroom-marquee-achievement.svg"));
 
 var _liveroomMarqueeRanking = _interopRequireDefault(require("./liveroom-marquee-ranking.svg"));
 
 var _animation_celebrate = _interopRequireDefault(require("./animation_celebrate.png"));
+
+var _patternPrimeBulletStars = _interopRequireDefault(require("./pattern-prime-bullet-stars.svg"));
+
+var _animation_bullet_shiny_stars = _interopRequireDefault(require("./animation_bullet_shiny_stars.webp"));
 
 var _ArrowIcon = require("./icons/ArrowIcon");
 
@@ -32319,6 +32332,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //Level Badges
 //Marquees
+//Bullet Text Pattern
 //Icons
 // import Bulletin from './Icons/icon-bulletin.svg';
 // import Sofa from './Icons/icon-sofa.svg';
@@ -32346,13 +32360,19 @@ var levelBadge = {
 };
 exports.levelBadge = levelBadge;
 var marqueeImg = {
-  public: _goldMarquee.default,
+  golden: _goldMarquee.default,
+  silver: _silverMarquee.default,
   ranking: _liveroomMarqueeRanking.default,
   achievement: _liveroomMarqueeAchievement.default,
   achievementCelebrate: _animation_celebrate.default
 };
 exports.marqueeImg = marqueeImg;
-},{"./badge-levelBronze-chatroom-36x20.png":"assets/badge-levelBronze-chatroom-36x20.png","./badge-levelSilver-chatroom-36x20.png":"assets/badge-levelSilver-chatroom-36x20.png","./badge-levelGold-chatroom-36x20.png":"assets/badge-levelGold-chatroom-36x20.png","./badge-levelDiamond-chatroom-36x20.png":"assets/badge-levelDiamond-chatroom-36x20.png","./badge-levelDarkGold-chatroom-36x20.png":"assets/badge-levelDarkGold-chatroom-36x20.png","./badge-levelBronze-36x20.png":"assets/badge-levelBronze-36x20.png","./badge-levelSilver-36x20.png":"assets/badge-levelSilver-36x20.png","./badge-levelGold-36x20.png":"assets/badge-levelGold-36x20.png","./badge-levelDiamond-36x20.png":"assets/badge-levelDiamond-36x20.png","./badge-levelDarkGold-36x20.png":"assets/badge-levelDarkGold-36x20.png","./gold-marquee.png":"assets/gold-marquee.png","./liveroom-marquee-achievement.svg":"assets/liveroom-marquee-achievement.svg","./liveroom-marquee-ranking.svg":"assets/liveroom-marquee-ranking.svg","./animation_celebrate.png":"assets/animation_celebrate.png","./icons/ArrowIcon":"assets/icons/ArrowIcon.js","./icons/XIcon":"assets/icons/XIcon.js","./icons/ChevronDownIcon":"assets/icons/ChevronDownIcon.js","./icons/DiamondIcon":"assets/icons/DiamondIcon.js","./icons/ScreenshotIcon":"assets/icons/ScreenshotIcon.js","./icons/EmojiIcon":"assets/icons/EmojiIcon.js","./icons/FireIcon":"assets/icons/FireIcon.js","./icons/HeartPlusIcon":"assets/icons/HeartPlusIcon.js","./icons/UserIcon":"assets/icons/UserIcon.js","./icons/ShareIcon":"assets/icons/ShareIcon.js","./icons/StarIcon":"assets/icons/StarIcon.js","./icons/BulletinIcon":"assets/icons/BulletinIcon.js"}],"components/Badges.js":[function(require,module,exports) {
+var patterns = {
+  primeBullet: _patternPrimeBulletStars.default,
+  starry: _animation_bullet_shiny_stars.default
+};
+exports.patterns = patterns;
+},{"./badge-levelBronze-chatroom-36x20.png":"assets/badge-levelBronze-chatroom-36x20.png","./badge-levelSilver-chatroom-36x20.png":"assets/badge-levelSilver-chatroom-36x20.png","./badge-levelGold-chatroom-36x20.png":"assets/badge-levelGold-chatroom-36x20.png","./badge-levelDiamond-chatroom-36x20.png":"assets/badge-levelDiamond-chatroom-36x20.png","./badge-levelDarkGold-chatroom-36x20.png":"assets/badge-levelDarkGold-chatroom-36x20.png","./badge-levelBronze-36x20.png":"assets/badge-levelBronze-36x20.png","./badge-levelSilver-36x20.png":"assets/badge-levelSilver-36x20.png","./badge-levelGold-36x20.png":"assets/badge-levelGold-36x20.png","./badge-levelDiamond-36x20.png":"assets/badge-levelDiamond-36x20.png","./badge-levelDarkGold-36x20.png":"assets/badge-levelDarkGold-36x20.png","./gold-marquee.png":"assets/gold-marquee.png","./silver-marquee.png":"assets/silver-marquee.png","./liveroom-marquee-achievement.svg":"assets/liveroom-marquee-achievement.svg","./liveroom-marquee-ranking.svg":"assets/liveroom-marquee-ranking.svg","./animation_celebrate.png":"assets/animation_celebrate.png","./pattern-prime-bullet-stars.svg":"assets/pattern-prime-bullet-stars.svg","./animation_bullet_shiny_stars.webp":"assets/animation_bullet_shiny_stars.webp","./icons/ArrowIcon":"assets/icons/ArrowIcon.js","./icons/XIcon":"assets/icons/XIcon.js","./icons/ChevronDownIcon":"assets/icons/ChevronDownIcon.js","./icons/DiamondIcon":"assets/icons/DiamondIcon.js","./icons/ScreenshotIcon":"assets/icons/ScreenshotIcon.js","./icons/EmojiIcon":"assets/icons/EmojiIcon.js","./icons/FireIcon":"assets/icons/FireIcon.js","./icons/HeartPlusIcon":"assets/icons/HeartPlusIcon.js","./icons/UserIcon":"assets/icons/UserIcon.js","./icons/ShareIcon":"assets/icons/ShareIcon.js","./icons/StarIcon":"assets/icons/StarIcon.js","./icons/BulletinIcon":"assets/icons/BulletinIcon.js"}],"components/Badges.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33599,8 +33619,8 @@ function PublicMarquee(props) {
     className: "PublicMarquee"
   }, props), /*#__PURE__*/_react.default.createElement("div", {
     className: "marquee-content t-title1"
-  }, /*#__PURE__*/_react.default.createElement("span", null, "\u606D\u559C\u5C0F\u9B5A\u5152\u6536\u5230\u5C0F\u9B5A\u5152\u7684\u982D\u865F\u7C89\u7D72\u7684\u5FC3\u60F3\u4E8B\u6210\uFF0C\u592A\u68D2\u4E86\uFF5E")), /*#__PURE__*/_react.default.createElement("img", {
-    src: _assets.marqueeImg.public,
+  }, /*#__PURE__*/_react.default.createElement("span", null, "\u606D\u559C\u5C0F\u9B5A\u5152\u6536\u5230\u5C0F\u9B5A\u5152\u7684\u982D\u865F\u7C89\u7D72\u7684\u5FC3\u60F3\u4E8B\u6210")), /*#__PURE__*/_react.default.createElement("img", {
+    src: _assets.marqueeImg[props.type],
     height: 72,
     width: 360
   }));
@@ -33618,6 +33638,8 @@ var _react = _interopRequireDefault(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _Avatar = _interopRequireDefault(require("./Avatar"));
+
+var _assets = require("../assets");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -33649,8 +33671,18 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  position:absolute;\n  background:", ";\n  height:44px;\n  left:20px;\n  right:0;\n  top:6px;\n  bottom:6px;\n  z-index:-1;\n  border-radius:22px;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject4() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  height:20px;\n  width:auto;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -33660,7 +33692,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  height:20px;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -33670,7 +33702,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  height: 48px;\n  right: 0px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: flex-start;\n  flex-wrap: nowrap;\n  background-image: linear-gradient(\n    119deg,\n    rgba(100, 71, 189, 0.75) 0%,\n    rgba(225, 89, 89, 0.75) 75%,\n    rgba(225, 89, 89, 0) 100%\n  );\n  border-radius: 24px 0px 0px 24px;\n  color: var(--white);\n  text-shadow: var(--text-shadow-for-white);\n  transform: translateX(100%);\n  > * {\n    margin: 4px;\n  }\n\n  animation: ", " 15s linear;\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 56px;\n  left:0;\n  display:inline-flex;\n  justify-content:flex-start;\n  align-items:center;\n  background-image: url(\"", "\");\n  border-radius: 24px 0px 0px 24px;\n  color: var(--white);\n  text-shadow: var(--text-shadow-for-white);\n\n  // transform: translateX(100%);\n  animation: ", " 10s linear;\n\n  .avatar{\n    margin-left:24px;\n  }\n  .texts{\n    margin:6px 16px 10px 4px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    \n  }\n  .tail{\n    position:absolute;\n    right:-108px;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -33680,7 +33712,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n0% {\n  transform:translateX(100%);\n }\n 100% {\n  transform:translateX(-100%);\n }\n"]);
+  var data = _taggedTemplateLiteral(["\n0% {\n  transform:translateX(100%);\n }\n 100% {\n  transform:translateX(calc(-100% - 400px));\n }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -33692,12 +33724,23 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var movein = (0, _styledComponents.keyframes)(_templateObject());
+var bgColor = ["linear-gradient(90deg, #00BB75 0%, rgba(114,188,35,0.50) 80%, rgba(114,188,35,0.00) 100%)", "linear-gradient(90deg, #00B1C4 0%, rgba(0,123,219,0.50) 80%, rgba(0,123,219,0.00) 100%)", "linear-gradient(90deg, #FFB600 0%, rgba(255,116,116,0.50) 80%, rgba(255,116,116,0.00) 100%)", "linear-gradient(90deg, #FB507E 1%, rgba(223,67,67,0.50) 80%, rgba(223,67,67,0.00) 100%)", "linear-gradient(90deg, #7F43DF 1%, rgba(212,77,57,0.50) 80%, rgba(212,77,57,0.00) 100%)"];
 
-var BulletTextWrapper = _styledComponents.default.div(_templateObject2(), movein);
+function randomColorIndex() {
+  return Math.floor(Math.random() * bgColor.length);
+}
+
+;
+
+var BulletTextWrapper = _styledComponents.default.div(_templateObject2(), _assets.patterns.primeBullet, movein);
 
 var BulletTextNickname = _styledComponents.default.p(_templateObject3());
 
 var BulletTextContent = _styledComponents.default.p(_templateObject4());
+
+var BulletBase = _styledComponents.default.div(_templateObject5(), function (props) {
+  return props.bg;
+});
 
 var BulletText = /*#__PURE__*/function (_React$Component) {
   _inherits(BulletText, _React$Component);
@@ -33713,7 +33756,8 @@ var BulletText = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "passWidthNumber", function () {
       console.log(_this.container.offsetWidth);
-      return _this.container.offsetWidth;
+
+      _this.props.changeTrackStatus(_this.props.target, _this.container.offsetWidth);
     });
 
     return _this;
@@ -33721,8 +33765,7 @@ var BulletText = /*#__PURE__*/function (_React$Component) {
 
   _createClass(BulletText, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      this.passWidthNumber();
+    value: function componentDidMount() {// this.passWidthNumber();
     }
   }, {
     key: "render",
@@ -33740,11 +33783,19 @@ var BulletText = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement(_Avatar.default, {
         size: 32,
         imgsrc: "https://i.pravatar.cc/50"
-      }), /*#__PURE__*/_react.default.createElement(BulletTextNickname, {
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "texts"
+      }, /*#__PURE__*/_react.default.createElement(BulletTextNickname, {
         className: "nickname tl-title3"
       }, "Nickname:"), /*#__PURE__*/_react.default.createElement(BulletTextContent, {
         className: "content tl-caption"
-      }, this.props.content), console.log("bulletText", this));
+      }, this.props.content)), console.log("bulletText", this), /*#__PURE__*/_react.default.createElement("img", {
+        className: "tail",
+        src: _assets.patterns.starry,
+        width: 140
+      }), /*#__PURE__*/_react.default.createElement(BulletBase, {
+        bg: bgColor[randomColorIndex()]
+      }));
     }
   }]);
 
@@ -33753,7 +33804,7 @@ var BulletText = /*#__PURE__*/function (_React$Component) {
 
 var _default = BulletText;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./Avatar":"components/Avatar.js"}],"components/BulletTracks.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./Avatar":"components/Avatar.js","../assets":"assets/index.js"}],"components/Tracks.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33761,14 +33812,52 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = BulletTracks;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _BulletText = _interopRequireDefault(require("./BulletText"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    position:relative;\n    display:flex;\n    flex-direction:column-reverse;\n    left:-16px;\n    right:-16px;\n    bottom:32px;\n    position:absolute;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    background-color:", ";\n    height:56px;\n    left:-16px;\n    right:-16px;\n    bottom:", "px;\n    position:absolute;\n    \n"]);
+  var data = _taggedTemplateLiteral(["\n    // background-color:", ";\n    height:56px;\n    \n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -33779,16 +33868,150 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var StyledBulletTracks = _styledComponents.default.div(_templateObject(), function (props) {
-  return props.status ? "rgba(0,204,0,0.5)" : "rgba(204,0,0,0.5)";
-}, function (props) {
-  return (props.order - 1) * 56 + 32;
+var StyledBulletTrack = _styledComponents.default.div(_templateObject(), function (props) {
+  return props.status ? "rgba(0,0,204,0.5)" : "rgba(204,0,0,0.5)";
 });
 
-function BulletTracks(props) {
-  return /*#__PURE__*/_react.default.createElement(StyledBulletTracks, props, props.order, props.children);
+var StyledBulletTracks = _styledComponents.default.div(_templateObject2());
+
+function BulletTrack(props) {
+  return /*#__PURE__*/_react.default.createElement(StyledBulletTrack, _extends({}, props, {
+    className: "bullet-track"
+  }), props.children);
 }
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/App.js":[function(require,module,exports) {
+
+function BulletTracks(props) {
+  var _useState = (0, _react.useState)({
+    status: true,
+    bullets: []
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      track0 = _useState2[0],
+      setTrack0 = _useState2[1];
+
+  var _useState3 = (0, _react.useState)({
+    status: true,
+    bullets: []
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      track1 = _useState4[0],
+      setTrack1 = _useState4[1];
+
+  var _useState5 = (0, _react.useState)({
+    status: true,
+    bullets: []
+  }),
+      _useState6 = _slicedToArray(_useState5, 2),
+      track2 = _useState6[0],
+      setTrack2 = _useState6[1];
+
+  var _useState7 = (0, _react.useState)([]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      queue = _useState8[0],
+      setQueue = _useState8[1];
+
+  var tracks = [track0, track1, track2];
+  var setTracks = [setTrack0, setTrack1, setTrack2];
+  (0, _react.useEffect)(function () {
+    placeBulletText(props.content);
+  }, [props.content]);
+
+  function createBulletText(bulletContent, targetTrack) {
+    return /*#__PURE__*/_react.default.createElement(_BulletText.default, {
+      content: bulletContent,
+      key: new Date().getTime(),
+      target: targetTrack,
+      destroyBulletText: destroyBulletText,
+      changeTrackStatus: changeTrackStatus
+    });
+  }
+
+  ;
+
+  function checkTrackStatus() {
+    var trackStatus = [track0.status, track1.status, track2.status];
+    console.log("track status", trackStatus);
+
+    var isNotAvailable = function isNotAvailable(currentTrack) {
+      return currentTrack == false;
+    };
+
+    if (trackStatus.every(isNotAvailable)) {
+      return false;
+    } else {
+      var availableTracks = trackStatus.map(function (currentTrack, index) {
+        return currentTrack ? index : -1;
+      }).filter(function (currentNumber) {
+        return currentNumber >= 0;
+      });
+      var randomTrack = availableTracks[Math.floor(Math.random() * availableTracks.length)];
+      return randomTrack;
+    }
+  }
+
+  ;
+
+  function changeTrackStatus(number, width) {
+    console.log("this get bullet length", width);
+    var duration = width / 100 * 10000;
+    setTimeout(function () {
+      console.log(number);
+      setTracks[number]({
+        status: true,
+        bullets: _toConsumableArray(tracks[number].bullets)
+      });
+    }, duration);
+    console.log("3.now the status change back to available");
+  }
+
+  ;
+
+  function placeBulletText(content) {
+    console.log("1. content:", content);
+    var targetTrack = checkTrackStatus();
+    console.log("2. targetTrack:", targetTrack);
+    var bullet = createBulletText(content, targetTrack);
+
+    if (targetTrack === false) {
+      console.log("no track is available");
+      setQueue([].concat(_toConsumableArray(queue), [bullet]));
+    } else {
+      console.log("2. this bullet goes to", targetTrack);
+      setTracks[targetTrack]({
+        status: false,
+        bullets: [tracks[targetTrack].bullets].concat([bullet])
+      }); // timerChangeStatus(targetTrack);
+    }
+  }
+
+  ;
+
+  function destroyBulletText(targetTrack) {
+    var oldTrack = _toConsumableArray(tracks[targetTrack].bullets);
+
+    console.log(oldTrack);
+    var newTrack = oldTrack.length > 1 ? [oldTrack.shift()] : [];
+    setTracks[targetTrack]({
+      status: tracks[targetTrack].status,
+      bullets: newTrack
+    });
+  }
+
+  ;
+  return /*#__PURE__*/_react.default.createElement(StyledBulletTracks, _extends({}, props, {
+    className: "bullet-tracks"
+  }), /*#__PURE__*/_react.default.createElement(BulletTrack, {
+    order: 0,
+    status: track0.status
+  }, track0.bullets), /*#__PURE__*/_react.default.createElement(BulletTrack, {
+    order: 1,
+    status: track1.status
+  }, track1.bullets), /*#__PURE__*/_react.default.createElement(BulletTrack, {
+    order: 2,
+    status: track2.status
+  }, track2.bullets));
+}
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./BulletText":"components/BulletText.js"}],"components/App.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -33809,25 +34032,11 @@ var _Marquee = _interopRequireDefault(require("./Marquee"));
 
 var _PublicMarquee = _interopRequireDefault(require("./PublicMarquee"));
 
-var _BulletText = _interopRequireDefault(require("./BulletText"));
-
-var _BulletTracks = _interopRequireDefault(require("./BulletTracks"));
+var _Tracks = _interopRequireDefault(require("./Tracks"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -33856,7 +34065,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  height: 100vh;\n  overflow: hidden;\n\n  main {\n    flex: 3;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    height: 100%;\n    background-color: var(--black95);\n  }\n\n  aside {\n    flex: 1;\n    height: 100%;\n    background-color: var(--black);\n    padding: 1rem;\n    color: var(--lightGrey1);\n    display: flex;\n    flex-direction: column;\n    summary {\n      margin-bottom: 16px;\n      display: flex;\n      align-items: center;\n      justify-content: flex-start;\n      input {\n        position: absolute;\n        right: 0;\n      }\n    }\n    .option-input {\n      display: flex;\n      align-items: baseline;\n      justify-content: space-between;\n      margin: 8px 0;\n      label {\n        color: var(--grey2);\n        flex-shrink: 0;\n        margin-right: 4px;\n      }\n      input {\n        flex: 1 1 10px;\n        background-color: var(--grey1);\n        border-radius: 4px;\n        color: var(--roseBrown);\n        padding: 4px 8px;\n        text-align: center;\n        font-weight: bold;\n      }\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  height: 100vh;\n  overflow: hidden;\n\n  main {\n    flex: 3;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    height: 100%;\n    background-color: var(--black95);\n  }\n\n  aside {\n    flex: 1;\n    height: 100%;\n    background-color: var(--black);\n    padding: 1rem;\n    color: var(--lightGrey1);\n    display: flex;\n    flex-direction: column;\n    summary {\n      margin-bottom: 16px;\n      display: flex;\n      align-items: center;\n      justify-content: flex-start;\n      input {\n        position: absolute;\n        right: 0;\n        background-color:red;\n      }\n    }\n    .option-input {\n      display: flex;\n      align-items: baseline;\n      justify-content: space-between;\n      margin: 16px 0;\n      label {\n        color: var(--grey2);\n        flex-shrink: 0;\n        margin-right: 4px;\n      }\n      input {\n        flex: 1 1 10px;\n        background-color: var(--grey1);\n        border-radius: 4px;\n        color: var(--roseBrown);\n        padding: 4px 8px;\n        text-align: center;\n        font-weight: bold;\n        width:100%;\n        height:28px;\n        margin-left:8px;\n      }\n    }\n    button{\n      background-color:var(--roseBrown);\n      padding:6px 16px;\n      margin-left:8px;\n      border-radius:4px;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -33925,6 +34134,14 @@ var App = /*#__PURE__*/function (_React$Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "handlePublicMarqueeType", function (event) {
+      _this.setState({
+        publicMarquee: _objectSpread(_objectSpread({}, _this.state.publicMarquee), {}, {
+          type: event
+        })
+      });
+    });
+
     _defineProperty(_assertThisInitialized(_this), "handleMarqueeContent", function (event) {
       _this.setState({
         marquee: _objectSpread(_objectSpread({}, _this.state.marquee), {}, {
@@ -33943,93 +34160,12 @@ var App = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "handleBulletSubmit", function (event) {
       event.preventDefault();
-      var bulletText = _this.state.bulletText;
-      console.log(_this.state);
-
-      var targetTrack = _this.checkTrackStatus();
-
-      var bullet = _this.createBulletText(_this.state.bulletText.inputContent, targetTrack);
-
-      if (!targetTrack) {
-        console.log("no track is available");
-
-        _this.setState({
-          bulletText: _objectSpread(_objectSpread({}, bulletText), {}, {
-            content: bulletText.inputContent,
-            inputContent: "",
-            queue: [].concat(_toConsumableArray(bulletText.queue), [bullet])
-          })
-        });
-      } else {
-        var _objectSpread2;
-
-        console.log("this bullet goes to", targetTrack);
-
-        _this.setState({
-          bulletText: _objectSpread(_objectSpread({}, bulletText), {}, (_objectSpread2 = {
-            content: bulletText.inputContent,
-            inputContent: ""
-          }, _defineProperty(_objectSpread2, "track".concat(targetTrack), [].concat(_toConsumableArray(bulletText[["track".concat(targetTrack)]]), [bullet])), _defineProperty(_objectSpread2, "track".concat(targetTrack, "Status"), false), _objectSpread2))
-        });
-
-        _this.timerChangeStatus(targetTrack);
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "checkTrackStatus", function () {
-      var _this$state$bulletTex = _this.state.bulletText,
-          track1Status = _this$state$bulletTex.track1Status,
-          track2Status = _this$state$bulletTex.track2Status,
-          track3Status = _this$state$bulletTex.track3Status;
-      var trackStatus = [track1Status, track2Status, track3Status];
-
-      var isNotAvailable = function isNotAvailable(currentTrack) {
-        return currentTrack == false;
-      };
-
-      if (trackStatus.every(isNotAvailable)) {
-        return false;
-      } else {
-        var availableTracks = trackStatus.map(function (currentTrack, index) {
-          return currentTrack ? index + 1 : -1;
-        }).filter(function (currentNumber) {
-          return currentNumber >= 0;
-        });
-        var randomTrack = availableTracks[Math.floor(Math.random() * availableTracks.length)];
-        return randomTrack;
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "timerChangeStatus", function (order) {
-      setTimeout(function () {
-        console.log(order);
-        var bulletText = _this.state.bulletText;
-
-        _this.setState({
-          bulletText: _objectSpread(_objectSpread({}, bulletText), {}, _defineProperty({}, "track".concat(order, "Status"), true))
-        });
-      }, 5000);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "createBulletText", function (bulletContent, targetTrack) {
-      return /*#__PURE__*/_react.default.createElement(_BulletText.default, {
-        content: bulletContent,
-        key: new Date().getTime(),
-        target: targetTrack,
-        destroyBulletText: _this.destroyBulletText
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "destroyBulletText", function (targetTrack) {
-      var bulletText = _this.state.bulletText;
-
-      var track = _toConsumableArray(bulletText[["track".concat(targetTrack)]]);
-
-      console.log(track);
-      var newTrack = track.length > 1 ? [track.shift()] : [];
 
       _this.setState({
-        bulletText: _objectSpread(_objectSpread({}, bulletText), {}, _defineProperty({}, "track".concat(targetTrack), newTrack))
+        bulletText: _objectSpread(_objectSpread({}, _this.state.bulletText), {}, {
+          inputContent: "",
+          content: _this.state.bulletText.inputContent
+        })
       });
     });
 
@@ -34044,20 +34180,14 @@ var App = /*#__PURE__*/function (_React$Component) {
         content: "恭喜婕兒達成 20 萬熱度，一起歡呼吧～"
       },
       bulletText: {
-        show: true,
-        content: "",
-        inputContent: "",
-        queue: [],
-        track1: [],
-        track2: [],
-        track3: [],
-        track1Status: true,
-        track2Status: true,
-        track3Status: true
+        show: false,
+        content: "彈幕～彈幕～彈幕～",
+        inputContent: "彈幕～彈幕～彈幕～"
       },
       publicMarquee: {
         show: false,
-        duration: 10
+        duration: 10,
+        type: 1
       },
       gift: {
         show: false
@@ -34094,27 +34224,21 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement(_Streaming.default, null), /*#__PURE__*/_react.default.createElement(_LiveChatUI.default, {
         type: phones[currentPhone].type
       }, publicMarquee.show && /*#__PURE__*/_react.default.createElement(_PublicMarquee.default, {
-        duration: publicMarquee.duration
+        duration: publicMarquee.duration,
+        type: publicMarquee.type ? "golden" : "silver"
       }), welcomeEffect.show && /*#__PURE__*/_react.default.createElement(_WelcomeEffect.default, {
         level: "Diamond"
       }), marquee.show && /*#__PURE__*/_react.default.createElement(_Marquee.default, {
         duration: marquee.duration,
         content: marquee.content
-      }), /*#__PURE__*/_react.default.createElement(_BulletTracks.default, {
-        order: 1,
-        status: bulletText.track1Status
-      }, bulletText.track1), /*#__PURE__*/_react.default.createElement(_BulletTracks.default, {
-        order: 2,
-        status: bulletText.track2Status
-      }, bulletText.track2), /*#__PURE__*/_react.default.createElement(_BulletTracks.default, {
-        order: 3,
-        status: bulletText.track3Status
-      }, bulletText.track3)))), /*#__PURE__*/_react.default.createElement(_ToggleButtons.default, {
+      }), bulletText.show && /*#__PURE__*/_react.default.createElement(_Tracks.default, {
+        content: bulletText.content
+      })))), /*#__PURE__*/_react.default.createElement(_ToggleButtons.default, {
         name: "phone-sizes",
         options: phones.map(function (phone) {
           return phone.phoneName;
         }),
-        handlePhone: this.handlePhoneSize,
+        handleToggle: this.handlePhoneSize,
         selected: currentPhone
       })), /*#__PURE__*/_react.default.createElement("aside", null, /*#__PURE__*/_react.default.createElement("details", {
         className: "control-options welcome-effect-options",
@@ -34180,7 +34304,12 @@ var App = /*#__PURE__*/function (_React$Component) {
         }
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "option-input"
-      }, /*#__PURE__*/_react.default.createElement("label", {
+      }, /*#__PURE__*/_react.default.createElement(_ToggleButtons.default, {
+        name: "public-marquee-type",
+        options: ["銀", "金"],
+        handleToggle: this.handlePublicMarqueeType,
+        selected: publicMarquee.type
+      }), /*#__PURE__*/_react.default.createElement("label", {
         className: "t-body2",
         htmlFor: "public-marquee-duration"
       }, "\u9577\u5EA6(s)"), /*#__PURE__*/_react.default.createElement("input", {
@@ -34202,10 +34331,9 @@ var App = /*#__PURE__*/function (_React$Component) {
             })
           });
         }
-      })), /*#__PURE__*/_react.default.createElement("div", {
+      })), /*#__PURE__*/_react.default.createElement("form", {
+        onSubmit: this.handleBulletSubmit,
         className: "option-input"
-      }, /*#__PURE__*/_react.default.createElement("form", {
-        onSubmit: this.handleBulletSubmit
       }, /*#__PURE__*/_react.default.createElement("label", {
         className: "t-body2",
         htmlFor: "bullet-text-content"
@@ -34214,10 +34342,11 @@ var App = /*#__PURE__*/function (_React$Component) {
         type: "text",
         value: bulletText.inputContent,
         onChange: this.handleBulletTextContent
-      }), /*#__PURE__*/_react.default.createElement("input", {
+      }), /*#__PURE__*/_react.default.createElement("button", {
         type: "submit",
-        value: "Submit"
-      }))))));
+        className: "bullet-text-submit",
+        onSubmit: this.handleBulletSubmit
+      }, "\u767C\u9001")))));
     }
   }]);
 
@@ -34225,7 +34354,7 @@ var App = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(App, null), document.querySelector("#root"));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./Streaming":"components/Streaming.js","./ToggleButtons":"components/ToggleButtons.js","./LiveChatUI":"components/LiveChatUI.js","./WelcomeEffect":"components/WelcomeEffect.js","./Marquee":"components/Marquee.js","./PublicMarquee":"components/PublicMarquee.js","./BulletText":"components/BulletText.js","./BulletTracks":"components/BulletTracks.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./Streaming":"components/Streaming.js","./ToggleButtons":"components/ToggleButtons.js","./LiveChatUI":"components/LiveChatUI.js","./WelcomeEffect":"components/WelcomeEffect.js","./Marquee":"components/Marquee.js","./PublicMarquee":"components/PublicMarquee.js","./Tracks":"components/Tracks.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -34253,7 +34382,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58914" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59002" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
